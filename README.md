@@ -140,7 +140,7 @@ git push origin main --follow-tags
 npx @vscode/vsce publish --pat "your-personal-access-token"
 
 # Or using the legacy script
-.\publish.ps1 -PAT "your-personal-access-token"
+.\scripts\publish.ps1 -PAT "your-personal-access-token"
 ```
 
 #### CI/CD Status
@@ -151,18 +151,31 @@ npx @vscode/vsce publish --pat "your-personal-access-token"
 ## 📁 Project Structure
 
 ```
-├── src/
-│   ├── extension.ts      # Main extension entry point
-│   ├── db.ts            # Data storage and retrieval
-│   └── panel.ts         # Webview provider for sidebar UI
-├── media/
-│   ├── webview.html     # Sidebar UI template
-│   ├── webview.js       # Frontend JavaScript
-│   ├── webview.css      # Styling
-│   └── logo.svg         # Extension icon
-├── package.json         # Extension manifest
-├── webpack.config.js    # Build configuration
-└── publish.ps1         # Publishing automation script
+├── .github/
+│   └── workflows/       # GitHub Actions CI/CD pipelines
+├── docs/               # 📚 All documentation
+│   ├── ARCHITECTURE.md
+│   ├── GITHUB_ACTIONS.md
+│   ├── INSTALLATION.md
+│   └── ...
+├── scripts/            # 🛠️ Utility scripts (legacy)
+│   ├── publish.ps1
+│   ├── install.ps1
+│   └── ...
+├── src/               # 💻 Source code
+│   ├── extension.ts    # Main extension entry point
+│   ├── db.ts          # Data storage and retrieval
+│   └── panel.ts       # Webview provider for sidebar UI
+├── media/             # 🎨 Assets and UI
+│   ├── webview.html   # Sidebar UI template
+│   ├── webview.js     # Frontend JavaScript
+│   ├── webview.css    # Styling
+│   └── logo.svg       # Extension icon
+├── dist/              # 📦 Compiled output
+├── package.json       # Extension manifest and dependencies
+├── webpack.config.js  # Build configuration
+├── tsconfig.json      # TypeScript configuration
+└── README.md          # Main documentation
 ```
 
 ## 🛠️ Configuration
