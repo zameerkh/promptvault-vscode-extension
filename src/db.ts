@@ -35,10 +35,12 @@ interface DatabaseData {
 export class PromptDB {
     private data!: DatabaseData;
     private dbPath: string;
+    private extensionVersion: string;
 
     constructor(context: vscode.ExtensionContext) {
         try {
             this.dbPath = path.join(context.globalStorageUri.fsPath, 'prompts.json');
+            this.extensionVersion = context.extension.packageJSON.version;
             
             // Ensure directory exists
             vscode.workspace.fs.createDirectory(context.globalStorageUri);
@@ -78,7 +80,7 @@ export class PromptDB {
             metadata: {
                 created: new Date().toISOString(),
                 lastUpdated: new Date().toISOString(),
-                extensionVersion: '1.0.7' // Current extension version
+                extensionVersion: this.extensionVersion
             }
         };
     }
@@ -94,7 +96,7 @@ export class PromptDB {
                 metadata: {
                     created: new Date().toISOString(),
                     lastUpdated: new Date().toISOString(),
-                    extensionVersion: '1.0.7' // Current extension version
+                    extensionVersion: this.extensionVersion
                 }
             };
         }
@@ -105,7 +107,7 @@ export class PromptDB {
         // Update metadata
         if (loadedData.metadata) {
             loadedData.metadata.lastUpdated = new Date().toISOString();
-            loadedData.metadata.extensionVersion = '1.0.7'; // Current extension version
+            loadedData.metadata.extensionVersion = this.extensionVersion;
         }
 
         return loadedData;
