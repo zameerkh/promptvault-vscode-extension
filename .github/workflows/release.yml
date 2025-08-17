@@ -1,0 +1,66 @@
+name: Create Release
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ 'package.json' ]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 2
+        
+    - name: Check for version change
+      id: version-check
+      run: |
+        OLD_VERSION=$(git show HEAD~1:package.json | jq -r .version)
+        NEW_VERSION=$(jq -r .version package.json)
+        if [ "$OLD_VERSION" != "$NEW_VERSION" ]; then
+          echo "version-changed=true" >> $GITHUB_OUTPUT
+          echo "new-version=$NEW_VERSION" >> $GITHUB_OUTPUT
+        else
+          echo "version-changed=false" >> $GITHUB_OUTPUT
+        fi
+        
+    - name: Setup Node.js
+      if: steps.version-check.outputs.version-changed == 'true'
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      if: steps.version-check.outputs.version-changed == 'true'
+      run: npm ci
+      
+    - name: Package extension
+      if: steps.version-check.outputs.version-changed == 'true'
+      run: npm run package
+      
+    - name: Create Release
+      if: steps.version-check.outputs.version-changed == 'true'
+      id: create-release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: v${{ steps.version-check.outputs.new-version }}
+        release_name: Release v${{ steps.version-check.outputs.new-version }}
+        draft: false
+        prerelease: false
+        
+    - name: Upload VSIX to Release
+      if: steps.version-check.outputs.version-changed == 'true'
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create-release.outputs.upload_url }}
+        asset_path: ./promptvault-dev-toolkit-${{ steps.version-check.outputs.new-version }}.vsix
+        asset_name: promptvault-dev-toolkit-${{ steps.version-check.outputs.new-version }}.vsix
+        asset_content_type: application/zip
