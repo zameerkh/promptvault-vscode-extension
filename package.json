@@ -2,7 +2,7 @@
   "name": "promptvault-dev-toolkit",
   "displayName": "PromptVault - Developer Toolkit",
   "description": "A local prompt and snippet vault with search, categories, and quick insertion for developers",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "publisher": "zameerkh0696",
   "author": {
     "name": "PromptVault Team"
