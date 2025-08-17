@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src {{cspSource}}; script-src 'nonce-{{nonce}}';">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{styleUri}}" rel="stylesheet">
+    <title>PromptVault</title>
+</head>
+<body>
+    <div class="header">
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search prompts..." />
+            <select id="categoryFilter" class="category-filter">
+                <option value="">All Categories</option>
+            </select>
+        </div>
+        <div class="button-container">
+            <button id="newPromptBtn" class="button">+ New Prompt</button>
+            <button id="newCategoryBtn" class="button secondary">+ New Category</button>
+        </div>
+    </div>
+
+    <div id="promptList" class="prompt-list">
+        <div class="loading">Loading prompts...</div>
+    </div>
+
+    <!-- Prompt Dialog -->
+    <div id="promptDialogOverlay" class="dialog-overlay">
+        <div class="dialog">
+            <div class="dialog-header">
+                <h2 class="dialog-title">Create Prompt</h2>
+            </div>
+            <div class="dialog-body">
+                <div class="form-group">
+                    <label class="form-label" for="promptTitle">Title</label>
+                    <input type="text" id="promptTitle" class="form-input" placeholder="Enter prompt title..." />
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="promptCategory">Category</label>
+                    <select id="promptCategory" class="form-select">
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="promptBody">Body</label>
+                    <textarea id="promptBody" class="form-textarea" placeholder="Enter your prompt content..."></textarea>
+                </div>
+            </div>
+            <div class="dialog-actions">
+                <button id="promptDialogCancel" class="button secondary">Cancel</button>
+                <button id="promptDialogSave" class="button">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category Dialog -->
+    <div id="categoryDialogOverlay" class="dialog-overlay">
+        <div class="dialog">
+            <div class="dialog-header">
+                <h2 class="dialog-title">Create Category</h2>
+            </div>
+            <div class="dialog-body">
+                <div class="form-group">
+                    <label class="form-label" for="categoryName">Name</label>
+                    <input type="text" id="categoryName" class="form-input" placeholder="Enter category name..." />
+                </div>
+            </div>
+            <div class="dialog-actions">
+                <button id="categoryDialogCancel" class="button secondary">Cancel</button>
+                <button id="categoryDialogSave" class="button">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script nonce="{{nonce}}" src="{{scriptUri}}"></script>
+</body>
+</html>
