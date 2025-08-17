@@ -1,6 +1,8 @@
-# PromptVault
+# PromptVault - Developer Toolkit
 
 A powerful VS Code extension for managing and organizing your code prompts, snippets, and templates. Keep your frequently used code patterns, AI prompts, and development snippets organized and easily accessible.
+
+**📦 [Install from VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=zameerkh0696.promptvault-dev-toolkit)**
 
 ## 🚀 Features
 
@@ -14,11 +16,12 @@ A powerful VS Code extension for managing and organizing your code prompts, snip
 
 ## 📦 Installation
 
-### From VS Code Marketplace (Coming Soon)
+### From VS Code Marketplace ✅
 1. Open Visual Studio Code
 2. Go to Extensions (`Ctrl+Shift+X`)
-3. Search for "PromptVault"
+3. Search for "PromptVault - Developer Toolkit"
 4. Click Install
+5. **Or install directly**: `code --install-extension zameerkh0696.promptvault-dev-toolkit`
 
 ### Manual Installation (Current Version)
 1. Download the latest `.vsix` file from the [releases page](https://github.com/zameerkh0696/promptvault-vscode-extension/releases)
@@ -30,7 +33,7 @@ A powerful VS Code extension for managing and organizing your code prompts, snip
 ### Command Line Installation
 ```bash
 # Install directly using VS Code CLI
-code --install-extension prompt-vault-1.0.0.vsix
+code --install-extension zameerkh0696.promptvault-dev-toolkit
 ```
 
 ### Using the Installation Script (Developers)
@@ -138,9 +141,9 @@ npm run watch
 PromptVault stores data locally using VS Code's built-in storage. No additional configuration required.
 
 ### Data Location
-- **Windows**: `%APPDATA%\Code\User\globalStorage\zameerkh0696.prompt-vault`
-- **macOS**: `~/Library/Application Support/Code/User/globalStorage/zameerkh0696.prompt-vault`
-- **Linux**: `~/.config/Code/User/globalStorage/zameerkh0696.prompt-vault`
+- **Windows**: `%APPDATA%\Code\User\globalStorage\zameerkh0696.promptvault-dev-toolkit`
+- **macOS**: `~/Library/Application Support/Code/User/globalStorage/zameerkh0696.promptvault-dev-toolkit`
+- **Linux**: `~/.config/Code/User/globalStorage/zameerkh0696.promptvault-dev-toolkit`
 
 ## 🤝 Contributing
 

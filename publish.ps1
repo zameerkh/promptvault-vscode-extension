@@ -136,6 +136,9 @@ function Invoke-Publish {
     
     Write-Info "🚀 Publishing to VS Code Marketplace..."
     
+    # Get package info for error messages
+    $packageInfo = Get-PackageInfo
+    
     # Set environment variable if PAT provided
     if ($PersonalAccessToken) {
         $env:VSCE_PAT = $PersonalAccessToken
@@ -166,6 +169,13 @@ function Invoke-Publish {
                 Write-Warning "   - Your Personal Access Token is valid and not expired"
                 Write-Warning "   - Your publisher name in package.json matches your Azure DevOps organization"
                 Write-Warning "   - Your PAT has 'Marketplace (Manage)' permissions"
+                Write-Warning "   - Your publisher account exists: https://marketplace.visualstudio.com/manage"
+                Write-Host ""
+                Write-Info "🔧 To create publisher account:"
+                Write-Host "1. Visit: https://marketplace.visualstudio.com/manage"
+                Write-Host "2. Sign in with your Azure DevOps account"
+                Write-Host "3. Click 'Create new publisher'"
+                Write-Host "4. Use publisher ID: $($packageInfo.Publisher)"
             }
             
             return $false

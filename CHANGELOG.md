@@ -1,25 +1,40 @@
 # Changelog
 
-All notable changes to the PromptVault VS Code extension will be documented in this file.
+All notable changes to the "PromptVault - Developer Toolkit" extension will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.0] - 2025-08-17
+## [1.0.2] - 2025-08-17
+
+### Published
+- 🎉 **Initial release to VS Code Marketplace**
+- Extension now available at: https://marketplace.visualstudio.com/items?itemName=zameerkh0696.promptvault-dev-toolkit
 
 ### Added
-- 🎉 Initial release of PromptVault
-- 🏪 Local JSON-based storage for prompts and categories  
-- 🔍 Real-time search with debounced input filtering
-- 📁 Category-based organization system
-- ⚡ Quick insertion via sidebar "Insert" buttons
-- 🎮 Command palette integration for prompt selection
-- 🎨 Modern webview interface with VS Code theming
-- 💾 Auto-save functionality for all changes
-- 🚀 Optimized performance with efficient rendering
-- 📖 Comprehensive documentation and README
-- 🛠️ TypeScript throughout for type safety
-- ✅ Production-ready code with clean architecture
+- Local prompt and snippet vault with categories
+- Full-text search across all prompts
+- Sidebar webview interface
+- QuickPick command for fast prompt access
+- JSON-based local storage (privacy-focused)
+- Command palette integration
+- Modern, responsive UI design
+
+### Features
+- ✅ Category organization system
+- ✅ Real-time search functionality  
+- ✅ Quick insertion into active editor
+- ✅ CRUD operations (Create, Read, Update, Delete)
+- ✅ Keyboard shortcuts support
+- ✅ State persistence between sessions
+- ✅ Production-ready codebase
+
+### Technical
+- Built with TypeScript for type safety
+- Webpack bundling for optimized performance
+- CSP-compliant webview implementation
+- Comprehensive error handling
+- Clean, maintainable code architecture
 
 ### Features
 - **Local Storage**: All data stored in VS Code global storage (no cloud dependencies)
