@@ -40,7 +40,7 @@ code --install-extension zameerkh0696.promptvault-dev-toolkit
 ### Using the Installation Script (Developers)
 ```powershell
 # Run the automated installation script
-.\install.ps1
+.\scripts\install.ps1
 ```
 
 ## 🎯 Usage
