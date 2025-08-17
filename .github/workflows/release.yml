@@ -45,7 +45,9 @@ jobs:
       
     - name: Package extension
       if: steps.version-check.outputs.version-changed == 'true'
-      run: npm run package
+      run: |
+        npx @vscode/vsce package
+        ls -la *.vsix
       
     - name: Create Release
       if: steps.version-check.outputs.version-changed == 'true'
@@ -76,11 +78,9 @@ jobs:
         
     - name: Upload VSIX to Release
       if: steps.version-check.outputs.version-changed == 'true'
-      uses: actions/upload-release-asset@v1
+      run: |
+        VSIX_FILE=$(ls *.vsix | head -1)
+        echo "Found VSIX file: $VSIX_FILE"
+        gh release upload v${{ steps.version-check.outputs.new-version }} "$VSIX_FILE"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create-release.outputs.upload_url }}
-        asset_path: ./promptvault-dev-toolkit-${{ steps.version-check.outputs.new-version }}.vsix
-        asset_name: promptvault-dev-toolkit-${{ steps.version-check.outputs.new-version }}.vsix
-        asset_content_type: application/zip
