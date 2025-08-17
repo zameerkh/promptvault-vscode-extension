@@ -3,7 +3,7 @@
   "displayName": "PromptVault",
   "description": "A local prompt and snippet vault with search, categories, and quick insertion for developers",
   "version": "1.0.0",
-  "publisher": "promptvault",
+  "publisher": "zameerkh0696",
   "author": {
     "name": "PromptVault Team"
   },
@@ -25,12 +25,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/promptvault/vscode-extension.git"
+    "url": "https://github.com/zameerkh0696/promptvault-vscode-extension.git"
   },
   "bugs": {
-    "url": "https://github.com/promptvault/vscode-extension/issues"
+    "url": "https://github.com/zameerkh0696/promptvault-vscode-extension/issues"
   },
-  "homepage": "https://github.com/promptvault/vscode-extension#readme",
+  "homepage": "https://github.com/zameerkh0696/promptvault-vscode-extension#readme",
   "license": "MIT",
   "activationEvents": [],
   "main": "./dist/extension.js",
