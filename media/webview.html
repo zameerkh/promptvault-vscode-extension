@@ -19,6 +19,28 @@
             <button id="newPromptBtn" class="button">+ New Prompt</button>
             <button id="newCategoryBtn" class="button secondary">+ New Category</button>
         </div>
+        <div class="bulk-operations">
+            <div class="bulk-actions" id="bulkActions" style="display: none;">
+                <span class="selected-count">0 selected</span>
+                <button id="bulkDeleteBtn" class="button danger small">Delete Selected</button>
+                <select id="bulkCategorySelect" class="bulk-category-select">
+                    <option value="">Move to Category...</option>
+                </select>
+                <button id="bulkMoveBtn" class="button small">Move</button>
+                <button id="bulkClearBtn" class="button secondary small">Clear Selection</button>
+            </div>
+            <div class="export-import-actions">
+                <div class="dropdown">
+                    <button id="exportBtn" class="button secondary small">Export</button>
+                    <div class="dropdown-content">
+                        <a href="#" id="exportJsonBtn">Export as JSON</a>
+                        <a href="#" id="exportCsvBtn">Export as CSV</a>
+                    </div>
+                </div>
+                <input type="file" id="importFileInput" accept=".json" style="display: none;">
+                <button id="importBtn" class="button secondary small">Import</button>
+            </div>
+        </div>
     </div>
 
     <div id="promptList" class="prompt-list">

@@ -71,6 +71,24 @@ export class PromptVaultViewProvider implements vscode.WebviewViewProvider {
                 case 'insert':
                     await this._handleInsert(data.text);
                     break;
+                case 'exportJson':
+                    await this._handleExportJson();
+                    break;
+                case 'exportCsv':
+                    await this._handleExportCsv();
+                    break;
+                case 'exportCategory':
+                    await this._handleExportCategory(data.categoryId);
+                    break;
+                case 'import':
+                    await this._handleImport(data.content);
+                    break;
+                case 'bulkDelete':
+                    await this._handleBulkDelete(data.promptIds);
+                    break;
+                case 'bulkUpdateCategory':
+                    await this._handleBulkUpdateCategory(data.promptIds, data.categoryId);
+                    break;
                 default:
                     console.warn(`Unknown message type: ${data.type}`);
             }
@@ -231,6 +249,169 @@ export class PromptVaultViewProvider implements vscode.WebviewViewProvider {
         }
     }
 
+    private async _handleExportJson(): Promise<void> {
+        try {
+            const exportData = this._db.exportToJson();
+            const fileName = `promptvault-export-${new Date().toISOString().split('T')[0]}.json`;
+            
+            const uri = await vscode.window.showSaveDialog({
+                defaultUri: vscode.Uri.file(fileName),
+                filters: {
+                    'JSON Files': ['json'],
+                    'All Files': ['*']
+                }
+            });
+
+            if (uri) {
+                await vscode.workspace.fs.writeFile(uri, Buffer.from(exportData, 'utf8'));
+                vscode.window.showInformationMessage(`Exported ${this._db.getStats().promptCount} prompts to ${uri.fsPath}`);
+            }
+        } catch (error) {
+            console.error('Export JSON error:', error);
+            this._postMessage({
+                type: 'error',
+                message: 'Failed to export to JSON'
+            });
+        }
+    }
+
+    private async _handleExportCsv(): Promise<void> {
+        try {
+            const exportData = this._db.exportToCsv();
+            const fileName = `promptvault-export-${new Date().toISOString().split('T')[0]}.csv`;
+            
+            const uri = await vscode.window.showSaveDialog({
+                defaultUri: vscode.Uri.file(fileName),
+                filters: {
+                    'CSV Files': ['csv'],
+                    'All Files': ['*']
+                }
+            });
+
+            if (uri) {
+                await vscode.workspace.fs.writeFile(uri, Buffer.from(exportData, 'utf8'));
+                vscode.window.showInformationMessage(`Exported ${this._db.getStats().promptCount} prompts to ${uri.fsPath}`);
+            }
+        } catch (error) {
+            console.error('Export CSV error:', error);
+            this._postMessage({
+                type: 'error',
+                message: 'Failed to export to CSV'
+            });
+        }
+    }
+
+    private async _handleExportCategory(categoryId: string): Promise<void> {
+        try {
+            const result = this._db.exportCategory(categoryId);
+            if (result.success && result.data) {
+                const category = this._db.getCategory(categoryId);
+                const fileName = `promptvault-${category?.name || 'category'}-${new Date().toISOString().split('T')[0]}.json`;
+                
+                const uri = await vscode.window.showSaveDialog({
+                    defaultUri: vscode.Uri.file(fileName),
+                    filters: {
+                        'JSON Files': ['json'],
+                        'All Files': ['*']
+                    }
+                });
+
+                if (uri) {
+                    await vscode.workspace.fs.writeFile(uri, Buffer.from(result.data, 'utf8'));
+                    const promptCount = JSON.parse(result.data).data.prompts.length;
+                    vscode.window.showInformationMessage(`Exported category with ${promptCount} prompts to ${uri.fsPath}`);
+                }
+            } else {
+                this._postMessage({
+                    type: 'error',
+                    message: result.error || 'Failed to export category'
+                });
+            }
+        } catch (error) {
+            console.error('Export category error:', error);
+            this._postMessage({
+                type: 'error',
+                message: 'Failed to export category'
+            });
+        }
+    }
+
+    private async _handleImport(content: string): Promise<void> {
+        try {
+            const result = this._db.importFromJson(content);
+            
+            if (result.success) {
+                let message = `Successfully imported ${result.imported?.prompts || 0} prompts and ${result.imported?.categories || 0} categories`;
+                
+                if (result.conflicts && result.conflicts.length > 0) {
+                    message += `\n\nConflicts resolved:\n${result.conflicts.map(c => `• ${c.type}: ${c.name} - ${c.action}`).join('\n')}`;
+                }
+                
+                vscode.window.showInformationMessage(message);
+                
+                // Refresh the UI
+                await this._handleListCategories();
+                await this._handleSearch();
+            } else {
+                this._postMessage({
+                    type: 'error',
+                    message: result.error || 'Import failed'
+                });
+            }
+        } catch (error) {
+            console.error('Import error:', error);
+            this._postMessage({
+                type: 'error',
+                message: 'Failed to import data'
+            });
+        }
+    }
+
+    private async _handleBulkDelete(promptIds: string[]): Promise<void> {
+        try {
+            const result = this._db.bulkDeletePrompts(promptIds);
+            
+            if (result.success) {
+                vscode.window.showInformationMessage(`Successfully deleted ${result.deleted} prompts`);
+                await this._handleSearch(); // Refresh the view
+            } else {
+                this._postMessage({
+                    type: 'error',
+                    message: result.error || 'Bulk delete failed'
+                });
+            }
+        } catch (error) {
+            console.error('Bulk delete error:', error);
+            this._postMessage({
+                type: 'error',
+                message: 'Failed to delete prompts'
+            });
+        }
+    }
+
+    private async _handleBulkUpdateCategory(promptIds: string[], categoryId: string): Promise<void> {
+        try {
+            const result = this._db.bulkUpdateCategory(promptIds, categoryId);
+            
+            if (result.success) {
+                const category = this._db.getCategory(categoryId);
+                vscode.window.showInformationMessage(`Successfully moved ${result.updated} prompts to "${category?.name || 'Unknown'}"`);
+                await this._handleSearch(); // Refresh the view
+            } else {
+                this._postMessage({
+                    type: 'error',
+                    message: result.error || 'Bulk update failed'
+                });
+            }
+        } catch (error) {
+            console.error('Bulk update error:', error);
+            this._postMessage({
+                type: 'error',
+                message: 'Failed to update prompts'
+            });
+        }
+    }
+
     private _postMessage(message: any): void {
         console.log('Sending message to webview:', message);
         if (this._view) {
@@ -245,6 +426,10 @@ export class PromptVaultViewProvider implements vscode.WebviewViewProvider {
             this._handleListCategories();
             this._handleSearch();
         }
+    }
+
+    public handleImport(jsonContent: string): void {
+        this._handleImport(jsonContent);
     }
 
     private _getHtmlForWebview(webview: vscode.Webview): string {

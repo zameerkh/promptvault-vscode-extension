@@ -4,6 +4,17 @@ import * as vscode from 'vscode';
 import { PromptDB } from './db';
 import { PromptVaultViewProvider } from './panel';
 
+// Suppress SQLite experimental warnings if present
+if (process.emitWarning) {
+	const originalEmitWarning = process.emitWarning;
+	process.emitWarning = function (warning: string | Error, ...args: any[]) {
+		if (typeof warning === 'string' && warning.includes('SQLite')) {
+			return; // Suppress SQLite experimental warnings
+		}
+		return originalEmitWarning.call(process, warning, ...args);
+	};
+}
+
 let db: PromptDB;
 
 // This method is called when your extension is activated
@@ -59,6 +70,30 @@ export function activate(context: vscode.ExtensionContext) {
 
 			vscode.commands.registerCommand('promptVault.refresh', () => {
 				promptVaultProvider.refresh();
+			}),
+
+			vscode.commands.registerCommand('promptVault.import', async () => {
+				const fileUri = await vscode.window.showOpenDialog({
+					canSelectFiles: true,
+					canSelectFolders: false,
+					canSelectMany: false,
+					filters: {
+						'JSON Files': ['json'],
+						'All Files': ['*']
+					}
+				});
+
+				if (fileUri && fileUri[0]) {
+					try {
+						const content = await vscode.workspace.fs.readFile(fileUri[0]);
+						const jsonContent = Buffer.from(content).toString('utf8');
+						
+						// Send import data to webview
+						promptVaultProvider.handleImport(jsonContent);
+					} catch (error) {
+						vscode.window.showErrorMessage(`Failed to read import file: ${error instanceof Error ? error.message : 'Unknown error'}`);
+					}
+				}
 			})
 		);
 

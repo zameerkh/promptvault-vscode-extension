@@ -12,9 +12,14 @@
                 categories: [],
                 currentPromptId: null,
                 searchQuery: '',
-                selectedCategoryId: ''
+                selectedCategoryId: '',
+                selectedPrompts: new Set()
             };
             this.debounceTimeout = null;
+            this.renderTimeout = null;
+            this.LARGE_DATASET_THRESHOLD = 100;
+            this.VIRTUAL_SCROLL_ITEM_HEIGHT = 120;
+            this.MAX_VISIBLE_ITEMS = 50;
             this.initialize();
         }
 
@@ -131,6 +136,49 @@
                 });
             }
 
+            // Bulk operations event listeners
+            const bulkDeleteBtn = document.getElementById('bulkDeleteBtn');
+            if (bulkDeleteBtn) {
+                bulkDeleteBtn.addEventListener('click', () => this.bulkDeleteSelected());
+            }
+
+            const bulkMoveBtn = document.getElementById('bulkMoveBtn');
+            if (bulkMoveBtn) {
+                bulkMoveBtn.addEventListener('click', () => this.bulkMoveSelected());
+            }
+
+            const bulkClearBtn = document.getElementById('bulkClearBtn');
+            if (bulkClearBtn) {
+                bulkClearBtn.addEventListener('click', () => this.clearSelection());
+            }
+
+            // Export/Import event listeners
+            const exportJsonBtn = document.getElementById('exportJsonBtn');
+            if (exportJsonBtn) {
+                exportJsonBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    this.exportJson();
+                });
+            }
+
+            const exportCsvBtn = document.getElementById('exportCsvBtn');
+            if (exportCsvBtn) {
+                exportCsvBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    this.exportCsv();
+                });
+            }
+
+            const importBtn = document.getElementById('importBtn');
+            if (importBtn) {
+                importBtn.addEventListener('click', () => this.showImportDialog());
+            }
+
+            const importFileInput = document.getElementById('importFileInput');
+            if (importFileInput) {
+                importFileInput.addEventListener('change', (e) => this.handleFileImport(e));
+            }
+
             // Handle messages from extension
             window.addEventListener('message', (event) => {
                 const message = event.data;
@@ -182,6 +230,7 @@
         renderCategories() {
             const categoryFilter = document.getElementById('categoryFilter');
             const promptCategorySelect = document.getElementById('promptCategory');
+            const bulkCategorySelect = document.getElementById('bulkCategorySelect');
             
             if (categoryFilter) {
                 categoryFilter.innerHTML = '<option value="">All Categories</option>' +
@@ -195,15 +244,35 @@
                     `<option value="${this.escapeHtml(cat.id)}">${this.escapeHtml(cat.name)}</option>`
                 ).join('');
             }
+
+            if (bulkCategorySelect) {
+                bulkCategorySelect.innerHTML = '<option value="">Move to Category...</option>' +
+                    this.state.categories.map(cat => 
+                        `<option value="${this.escapeHtml(cat.id)}">${this.escapeHtml(cat.name)}</option>`
+                    ).join('');
+            }
         }
 
         renderPrompts() {
+            if (this.renderTimeout) {
+                clearTimeout(this.renderTimeout);
+            }
+            
+            // Use requestAnimationFrame for smooth rendering
+            this.renderTimeout = setTimeout(() => {
+                this._doRenderPrompts();
+            }, 16); // ~60fps
+        }
+
+        _doRenderPrompts() {
             const promptList = document.getElementById('promptList');
             if (!promptList) {
                 return;
             }
 
-            if (this.state.prompts.length === 0) {
+            const prompts = this.state.prompts;
+
+            if (prompts.length === 0) {
                 promptList.innerHTML = `
                     <div class="empty-state">
                         <div class="empty-state-title">No prompts found</div>
@@ -211,13 +280,65 @@
                         <button class="button" onclick="promptVault.openPromptDialog()">Create Prompt</button>
                     </div>
                 `;
+                this.updateBulkActionsVisibility();
                 return;
             }
 
-            const promptsHtml = this.state.prompts.map(prompt => `
-                <div class="prompt-item">
+            // Performance optimization for large datasets
+            const isLargeDataset = prompts.length > this.LARGE_DATASET_THRESHOLD;
+            
+            if (isLargeDataset) {
+                promptList.classList.add('large-dataset');
+                this._renderVirtualizedPrompts(prompts);
+            } else {
+                promptList.classList.remove('large-dataset');
+                this._renderAllPrompts(prompts);
+            }
+            
+            this.updateBulkActionsVisibility();
+        }
+
+        _renderAllPrompts(prompts) {
+            const promptList = document.getElementById('promptList');
+            const promptsHtml = prompts.map(prompt => this._renderPromptItem(prompt)).join('');
+            promptList.innerHTML = promptsHtml;
+        }
+
+        _renderVirtualizedPrompts(prompts) {
+            const promptList = document.getElementById('promptList');
+            
+            // For large datasets, limit initial render and add "show more" functionality
+            const visiblePrompts = prompts.slice(0, this.MAX_VISIBLE_ITEMS);
+            const remainingCount = prompts.length - visiblePrompts.length;
+            
+            let promptsHtml = visiblePrompts.map(prompt => this._renderPromptItem(prompt)).join('');
+            
+            if (remainingCount > 0) {
+                promptsHtml += `
+                    <div class="load-more-container">
+                        <div class="load-more-info">Showing ${visiblePrompts.length} of ${prompts.length} prompts</div>
+                        <button class="button secondary" onclick="promptVault.loadMorePrompts()">
+                            Load ${Math.min(remainingCount, this.MAX_VISIBLE_ITEMS)} More
+                        </button>
+                        <button class="button secondary" onclick="promptVault.loadAllPrompts()">
+                            Show All (${remainingCount} remaining)
+                        </button>
+                    </div>
+                `;
+            }
+            
+            promptList.innerHTML = promptsHtml;
+        }
+
+        _renderPromptItem(prompt) {
+            return `
+                <div class="prompt-item ${this.state.selectedPrompts.has(prompt.id) ? 'selected' : ''}">
                     <div class="prompt-header">
-                        <h3 class="prompt-title">${this.escapeHtml(prompt.title)}</h3>
+                        <div class="prompt-header-left">
+                            <input type="checkbox" class="prompt-checkbox" ${this.state.selectedPrompts.has(prompt.id) ? 'checked' : ''} 
+                                   onchange="promptVault.togglePromptSelection('${prompt.id}', this.checked)" />
+                            <h3 class="prompt-title">${this.escapeHtml(prompt.title)}</h3>
+                        </div>
                         <span class="prompt-category">${this.escapeHtml(prompt.categoryName || '')}</span>
                     </div>
                     <div class="prompt-body">${this.escapeHtml(prompt.body)}</div>
@@ -225,11 +346,22 @@
                         <button class="action-button primary" onclick="promptVault.insertPrompt('${prompt.id}')">Insert</button>
                         <button class="action-button" onclick="promptVault.editPrompt('${prompt.id}')">Edit</button>
                         <button class="action-button danger" onclick="promptVault.deletePrompt('${prompt.id}')">Delete</button>
+                        <button class="action-button secondary" onclick="promptVault.exportSingleCategory('${prompt.categoryId}')">Export Category</button>
                     </div>
                 </div>
-            `).join('');
-            
-            promptList.innerHTML = promptsHtml;
+            `;
+        }
+
+        loadMorePrompts() {
+            const currentVisible = document.querySelectorAll('.prompt-item').length;
+            const nextBatch = Math.min(currentVisible + this.MAX_VISIBLE_ITEMS, this.state.prompts.length);
+            this.MAX_VISIBLE_ITEMS = nextBatch;
+            this._doRenderPrompts();
+        }
+
+        loadAllPrompts() {
+            this.MAX_VISIBLE_ITEMS = this.state.prompts.length;
+            this._doRenderPrompts();
         }
 
         openPromptDialog(promptId) {
@@ -364,6 +496,119 @@
 
         saveState() {
             vscode.setState(this.state);
+        }
+
+        // Bulk operations methods
+        togglePromptSelection(promptId, isSelected) {
+            if (isSelected) {
+                this.state.selectedPrompts.add(promptId);
+            } else {
+                this.state.selectedPrompts.delete(promptId);
+            }
+            this.updateBulkActionsVisibility();
+            this.saveState();
+        }
+
+        updateBulkActionsVisibility() {
+            const bulkActions = document.getElementById('bulkActions');
+            const selectedCount = document.querySelector('.selected-count');
+            
+            if (bulkActions && selectedCount) {
+                const count = this.state.selectedPrompts.size;
+                if (count > 0) {
+                    bulkActions.style.display = 'flex';
+                    selectedCount.textContent = `${count} selected`;
+                } else {
+                    bulkActions.style.display = 'none';
+                }
+            }
+        }
+
+        clearSelection() {
+            this.state.selectedPrompts.clear();
+            this.renderPrompts();
+            this.saveState();
+        }
+
+        bulkDeleteSelected() {
+            const count = this.state.selectedPrompts.size;
+            if (count === 0) {
+                return;
+            }
+
+            if (confirm(`Are you sure you want to delete ${count} selected prompt(s)?`)) {
+                const promptIds = Array.from(this.state.selectedPrompts);
+                vscode.postMessage({ type: 'bulkDelete', promptIds });
+                this.clearSelection();
+            }
+        }
+
+        bulkMoveSelected() {
+            const bulkCategorySelect = document.getElementById('bulkCategorySelect');
+            if (!bulkCategorySelect || !bulkCategorySelect.value) {
+                this.showError('Please select a category to move to');
+                return;
+            }
+
+            const count = this.state.selectedPrompts.size;
+            if (count === 0) {
+                return;
+            }
+
+            const promptIds = Array.from(this.state.selectedPrompts);
+            vscode.postMessage({ 
+                type: 'bulkUpdateCategory', 
+                promptIds, 
+                categoryId: bulkCategorySelect.value 
+            });
+            this.clearSelection();
+            bulkCategorySelect.value = '';
+        }
+
+        // Export/Import methods
+        exportJson() {
+            vscode.postMessage({ type: 'exportJson' });
+        }
+
+        exportCsv() {
+            vscode.postMessage({ type: 'exportCsv' });
+        }
+
+        exportSingleCategory(categoryId) {
+            vscode.postMessage({ type: 'exportCategory', categoryId });
+        }
+
+        showImportDialog() {
+            const importFileInput = document.getElementById('importFileInput');
+            if (importFileInput) {
+                importFileInput.click();
+            }
+        }
+
+        handleFileImport(event) {
+            const file = event.target.files[0];
+            if (!file) {
+                return;
+            }
+
+            if (file.type !== 'application/json' && !file.name.endsWith('.json')) {
+                this.showError('Please select a JSON file');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                try {
+                    const content = e.target.result;
+                    vscode.postMessage({ type: 'import', content });
+                } catch (error) {
+                    this.showError('Failed to read file: ' + error.message);
+                }
+            };
+            reader.readAsText(file);
+
+            // Clear the input so the same file can be selected again
+            event.target.value = '';
         }
     }
 

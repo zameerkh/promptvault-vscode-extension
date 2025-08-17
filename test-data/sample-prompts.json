@@ -1,0 +1,146 @@
+{
+  "version": "1.0",
+  "exportedAt": "2025-08-17T10:00:00.000Z",
+  "data": {
+    "categories": [
+      {
+        "id": "cat-ai-dev",
+        "name": "AI Development"
+      },
+      {
+        "id": "cat-code-review",
+        "name": "Code Review"
+      },
+      {
+        "id": "cat-documentation",
+        "name": "Documentation"
+      },
+      {
+        "id": "cat-debugging",
+        "name": "Debugging"
+      },
+      {
+        "id": "cat-testing",
+        "name": "Testing"
+      },
+      {
+        "id": "cat-refactoring",
+        "name": "Refactoring"
+      },
+      {
+        "id": "cat-architecture",
+        "name": "Architecture"
+      },
+      {
+        "id": "cat-performance",
+        "name": "Performance"
+      },
+      {
+        "id": "cat-security",
+        "name": "Security"
+      },
+      {
+        "id": "cat-git",
+        "name": "Git & Version Control"
+      }
+    ],
+    "prompts": [
+      {
+        "id": "prompt-1",
+        "title": "Code Review Checklist",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Readability**: Is the code clear and well-commented?\n3. **Performance**: Are there any obvious performance issues?\n4. **Security**: Are there potential security vulnerabilities?\n5. **Best Practices**: Does it follow language/framework conventions?\n6. **Error Handling**: Are edge cases and errors properly handled?\n7. **Testing**: Is the code testable and well-tested?\n\nSpecific areas to focus on:\n- Variable naming and function organization\n- Code duplication and reusability\n- Memory management and resource cleanup",
+        "categoryId": "cat-code-review",
+        "created_at": "2025-01-15T09:30:00.000Z",
+        "updated_at": "2025-08-15T14:22:00.000Z"
+      },
+      {
+        "id": "prompt-2",
+        "title": "API Documentation Template",
+        "body": "# API Endpoint Documentation\n\n## Endpoint\n`METHOD /api/endpoint`\n\n## Description\nBrief description of what this endpoint does.\n\n## Parameters\n### Path Parameters\n- `id` (string, required): Description\n\n### Query Parameters\n- `limit` (number, optional): Maximum number of results (default: 10)\n- `offset` (number, optional): Number of results to skip (default: 0)\n\n### Request Body\n```json\n{\n  \"field1\": \"string\",\n  \"field2\": \"number\"\n}\n```\n\n## Response\n### Success Response (200)\n```json\n{\n  \"success\": true,\n  \"data\": {},\n  \"message\": \"Success message\"\n}\n```\n\n### Error Response (400/500)\n```json\n{\n  \"success\": false,\n  \"error\": \"Error message\",\n  \"code\": \"ERROR_CODE\"\n}\n```\n\n## Examples\n### cURL\n```bash\ncurl -X POST \\\n  http://localhost:3000/api/endpoint \\\n  -H 'Content-Type: application/json' \\\n  -d '{ \"field1\": \"value\" }'\n```",
+        "categoryId": "cat-documentation",
+        "created_at": "2025-02-01T11:15:00.000Z",
+        "updated_at": "2025-08-10T16:45:00.000Z"
+      },
+      {
+        "id": "prompt-3",
+        "title": "Debugging Session Plan",
+        "body": "# Debugging Session Plan\n\n## Problem Description\n**Issue**: [Describe the bug/problem]\n**Environment**: [Development/Staging/Production]\n**Severity**: [Low/Medium/High/Critical]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected vs Actual Behavior\n**Expected**: What should happen\n**Actual**: What actually happens\n\n## Investigation Strategy\n1. **Log Analysis**: Check application and system logs\n2. **Code Review**: Review recent changes in related modules\n3. **Data Verification**: Verify data integrity and state\n4. **Environment Check**: Compare environments for differences\n5. **User Path Analysis**: Trace the user journey that leads to the issue\n\n## Debugging Tools\n- [ ] Debugger/breakpoints\n- [ ] Logging statements\n- [ ] Performance profiler\n- [ ] Network inspection\n- [ ] Database queries\n\n## Next Steps\n- [ ] Create minimal reproduction case\n- [ ] Write test case to capture the bug\n- [ ] Implement fix\n- [ ] Verify fix resolves issue\n- [ ] Deploy and monitor",
+        "categoryId": "cat-debugging",
+        "created_at": "2025-02-15T08:20:00.000Z",
+        "updated_at": "2025-08-12T10:30:00.000Z"
+      },
+      {
+        "id": "prompt-4",
+        "title": "Unit Test Template",
+        "body": "// Unit Test Template\n\ndescribe('ComponentName', () => {\n  let component;\n  let mockDependency;\n\n  beforeEach(() => {\n    mockDependency = {\n      method: jest.fn()\n    };\n    \n    component = new ComponentName(mockDependency);\n  });\n\n  afterEach(() => {\n    jest.clearAllMocks();\n  });\n\n  describe('methodName', () => {\n    it('should return expected result for valid input', () => {\n      // Arrange\n      const input = 'valid input';\n      const expectedOutput = 'expected result';\n      mockDependency.method.mockReturnValue('mocked value');\n\n      // Act\n      const result = component.methodName(input);\n\n      // Assert\n      expect(result).toBe(expectedOutput);\n      expect(mockDependency.method).toHaveBeenCalledWith(input);\n      expect(mockDependency.method).toHaveBeenCalledTimes(1);\n    });\n\n    it('should handle edge case gracefully', () => {\n      // Arrange\n      const edgeInput = null;\n\n      // Act & Assert\n      expect(() => component.methodName(edgeInput)).toThrow('Expected error message');\n    });\n\n    it('should handle async operations correctly', async () => {\n      // Arrange\n      const asyncInput = 'async input';\n      mockDependency.method.mockResolvedValue('async result');\n\n      // Act\n      const result = await component.methodName(asyncInput);\n\n      // Assert\n      expect(result).toBeDefined();\n      expect(mockDependency.method).toHaveBeenCalledWith(asyncInput);\n    });\n  });\n});",
+        "categoryId": "cat-testing",
+        "created_at": "2025-03-01T13:45:00.000Z",
+        "updated_at": "2025-08-14T09:15:00.000Z"
+      },
+      {
+        "id": "prompt-5",
+        "title": "AI Code Assistant Prompt",
+        "body": "You are an expert software engineer helping to write high-quality code. Please:\n\n1. **Analyze the Requirements**: Understand what needs to be built\n2. **Suggest Best Practices**: Recommend appropriate patterns and approaches\n3. **Write Clean Code**: Follow SOLID principles and clean code practices\n4. **Include Error Handling**: Add appropriate error handling and validation\n5. **Add Documentation**: Include clear comments and documentation\n6. **Consider Performance**: Optimize for efficiency when relevant\n7. **Security First**: Consider security implications in your solution\n\n**Context**: [Describe the project context, tech stack, and constraints]\n\n**Specific Request**: [What exactly do you need help with?]\n\n**Existing Code**: \n```language\n[Paste relevant existing code here]\n```\n\n**Expected Outcome**: [Describe what the final result should accomplish]",
+        "categoryId": "cat-ai-dev",
+        "created_at": "2025-03-10T15:30:00.000Z",
+        "updated_at": "2025-08-16T11:20:00.000Z"
+      },
+      {
+        "id": "prompt-6",
+        "title": "Refactoring Checklist",
+        "body": "# Code Refactoring Checklist\n\n## Before Refactoring\n- [ ] **Write Tests**: Ensure comprehensive test coverage exists\n- [ ] **Document Current Behavior**: Record what the code currently does\n- [ ] **Backup**: Create a branch or backup of current working code\n- [ ] **Identify Goals**: What are you trying to improve?\n\n## Refactoring Goals\n- [ ] Improve readability\n- [ ] Reduce complexity\n- [ ] Eliminate code duplication\n- [ ] Improve performance\n- [ ] Better error handling\n- [ ] More maintainable architecture\n\n## Refactoring Techniques\n1. **Extract Method**: Break large functions into smaller ones\n2. **Extract Variable**: Make complex expressions more readable\n3. **Rename**: Use more descriptive names for variables/functions\n4. **Move Method/Field**: Improve class organization\n5. **Replace Magic Numbers**: Use named constants\n6. **Simplify Conditionals**: Reduce nested if statements\n\n## After Refactoring\n- [ ] **Run All Tests**: Ensure functionality unchanged\n- [ ] **Performance Check**: Verify no performance regression\n- [ ] **Code Review**: Get peer feedback on changes\n- [ ] **Update Documentation**: Reflect any API changes\n- [ ] **Monitor**: Watch for issues after deployment\n\n## Red Flags to Stop\n- Tests are failing\n- Behavior is changing unexpectedly\n- Performance is degrading significantly\n- Code is becoming more complex",
+        "categoryId": "cat-refactoring",
+        "created_at": "2025-03-20T10:00:00.000Z",
+        "updated_at": "2025-08-13T14:50:00.000Z"
+      },
+      {
+        "id": "prompt-7",
+        "title": "System Architecture Documentation",
+        "body": "# System Architecture Documentation\n\n## Overview\n**System Name**: [Application Name]\n**Version**: [Current Version]\n**Last Updated**: [Date]\n\n## High-Level Architecture\n```\n[ASCII diagram or description of major components]\n```\n\n## Components\n\n### Frontend\n- **Technology**: [React/Vue/Angular/etc.]\n- **Key Libraries**: [List major dependencies]\n- **Deployment**: [How it's deployed]\n\n### Backend\n- **Technology**: [Node.js/Python/Java/etc.]\n- **Framework**: [Express/FastAPI/Spring/etc.]\n- **Authentication**: [JWT/OAuth/etc.]\n\n### Database\n- **Type**: [SQL/NoSQL]\n- **Technology**: [PostgreSQL/MongoDB/etc.]\n- **Key Tables/Collections**: [List main entities]\n\n### Infrastructure\n- **Hosting**: [AWS/GCP/Azure/etc.]\n- **Container**: [Docker/Kubernetes]\n- **CI/CD**: [GitHub Actions/Jenkins/etc.]\n\n## Data Flow\n1. User interaction triggers frontend action\n2. Frontend sends request to backend API\n3. Backend processes request and queries database\n4. Response flows back through the stack\n\n## Security Considerations\n- [ ] Authentication and authorization\n- [ ] Data encryption (in transit and at rest)\n- [ ] Input validation and sanitization\n- [ ] CORS configuration\n- [ ] Rate limiting\n- [ ] Security headers\n\n## Performance Considerations\n- [ ] Caching strategy\n- [ ] Database indexing\n- [ ] Load balancing\n- [ ] CDN usage\n- [ ] Monitoring and alerting\n\n## Deployment Architecture\n- **Environments**: Development, Staging, Production\n- **Deployment Strategy**: [Blue/Green, Rolling, etc.]\n- **Rollback Plan**: [How to rollback if needed]",
+        "categoryId": "cat-architecture",
+        "created_at": "2025-04-01T12:15:00.000Z",
+        "updated_at": "2025-08-11T16:00:00.000Z"
+      },
+      {
+        "id": "prompt-8",
+        "title": "Performance Optimization Checklist",
+        "body": "# Performance Optimization Checklist\n\n## Frontend Performance\n\n### JavaScript\n- [ ] **Bundle Size**: Minimize JavaScript bundle size\n- [ ] **Code Splitting**: Load code on-demand\n- [ ] **Tree Shaking**: Remove unused code\n- [ ] **Lazy Loading**: Defer non-critical resources\n- [ ] **Debouncing**: Limit expensive operations\n\n### CSS\n- [ ] **Critical CSS**: Inline above-the-fold styles\n- [ ] **Minification**: Compress CSS files\n- [ ] **Unused CSS**: Remove unused styles\n\n### Images & Media\n- [ ] **Format Optimization**: Use WebP, AVIF when supported\n- [ ] **Compression**: Optimize image file sizes\n- [ ] **Responsive Images**: Serve appropriate sizes\n- [ ] **Lazy Loading**: Load images as needed\n\n## Backend Performance\n\n### Database\n- [ ] **Query Optimization**: Analyze and optimize slow queries\n- [ ] **Indexing**: Add appropriate database indexes\n- [ ] **Connection Pooling**: Reuse database connections\n- [ ] **Caching**: Implement query result caching\n\n### API\n- [ ] **Response Size**: Minimize payload sizes\n- [ ] **Compression**: Enable gzip/brotli compression\n- [ ] **Rate Limiting**: Prevent abuse\n- [ ] **Pagination**: Limit large result sets\n\n### Caching\n- [ ] **Redis/Memcached**: In-memory caching\n- [ ] **CDN**: Content delivery network\n- [ ] **Browser Caching**: Set appropriate cache headers\n- [ ] **Application Caching**: Cache expensive computations\n\n## Monitoring\n- [ ] **Performance Metrics**: Track key performance indicators\n- [ ] **Real User Monitoring**: Monitor actual user experience\n- [ ] **Load Testing**: Test under expected traffic\n- [ ] **Alerting**: Set up performance alerts\n\n## Tools\n- **Frontend**: Lighthouse, WebPageTest, Chrome DevTools\n- **Backend**: New Relic, DataDog, Application Profilers\n- **Database**: Query analyzers, Index advisors",
+        "categoryId": "cat-performance",
+        "created_at": "2025-04-15T14:30:00.000Z",
+        "updated_at": "2025-08-09T13:25:00.000Z"
+      },
+      {
+        "id": "prompt-9",
+        "title": "Security Code Review Checklist",
+        "body": "# Security Code Review Checklist\n\n## Input Validation\n- [ ] **SQL Injection**: Use parameterized queries/ORMs\n- [ ] **XSS Prevention**: Sanitize user input, escape output\n- [ ] **Command Injection**: Avoid shell command execution with user input\n- [ ] **Path Traversal**: Validate file paths and restrict access\n- [ ] **Input Length**: Validate input length limits\n- [ ] **Data Type Validation**: Ensure correct data types\n\n## Authentication & Authorization\n- [ ] **Password Security**: Strong password requirements, hashing\n- [ ] **Session Management**: Secure session handling, timeouts\n- [ ] **JWT Security**: Proper token validation and expiration\n- [ ] **Role-Based Access**: Implement proper authorization checks\n- [ ] **Multi-Factor Authentication**: Consider MFA for sensitive operations\n\n## Data Protection\n- [ ] **Encryption at Rest**: Encrypt sensitive data in database\n- [ ] **Encryption in Transit**: Use HTTPS/TLS for all communications\n- [ ] **Key Management**: Secure storage and rotation of encryption keys\n- [ ] **PII Handling**: Proper handling of personally identifiable information\n- [ ] **Data Masking**: Mask sensitive data in logs and responses\n\n## Common Vulnerabilities\n- [ ] **OWASP Top 10**: Check against current OWASP vulnerabilities\n- [ ] **Dependency Scanning**: Scan for vulnerable dependencies\n- [ ] **Error Handling**: Don't expose sensitive information in errors\n- [ ] **Logging**: Log security events, but not sensitive data\n- [ ] **CORS**: Configure Cross-Origin Resource Sharing properly\n- [ ] **CSP**: Implement Content Security Policy headers\n\n## Infrastructure Security\n- [ ] **Environment Variables**: Store secrets in environment variables\n- [ ] **Principle of Least Privilege**: Minimal required permissions\n- [ ] **Network Security**: Firewall rules, VPN access\n- [ ] **Container Security**: Secure container images and runtime\n- [ ] **Regular Updates**: Keep dependencies and systems updated\n\n## Security Testing\n- [ ] **Static Analysis**: Use SAST tools (SonarQube, CodeQL)\n- [ ] **Dependency Scanning**: Check for vulnerable packages\n- [ ] **Penetration Testing**: Regular security assessments\n- [ ] **Code Review**: Peer review with security focus",
+        "categoryId": "cat-security",
+        "created_at": "2025-05-01T09:45:00.000Z",
+        "updated_at": "2025-08-08T15:10:00.000Z"
+      },
+      {
+        "id": "prompt-10",
+        "title": "Git Workflow Best Practices",
+        "body": "# Git Workflow Best Practices\n\n## Branch Naming Convention\n- `feature/description` - New features\n- `bugfix/description` - Bug fixes\n- `hotfix/description` - Critical production fixes\n- `chore/description` - Maintenance tasks\n- `docs/description` - Documentation updates\n\n## Commit Message Format\n```\ntype(scope): brief description\n\nDetailed explanation of what changed and why.\n\nCloses #issue-number\n```\n\n**Types**: feat, fix, docs, style, refactor, test, chore\n\n## Development Workflow\n\n1. **Start from main**:\n   ```bash\n   git checkout main\n   git pull origin main\n   ```\n\n2. **Create feature branch**:\n   ```bash\n   git checkout -b feature/new-feature\n   ```\n\n3. **Make commits**:\n   ```bash\n   git add -A\n   git commit -m \"feat: add new feature functionality\"\n   ```\n\n4. **Keep branch updated**:\n   ```bash\n   git fetch origin\n   git rebase origin/main\n   ```\n\n5. **Push and create PR**:\n   ```bash\n   git push origin feature/new-feature\n   ```\n\n## Code Review Process\n- [ ] **Self Review**: Review your own changes first\n- [ ] **Automated Tests**: Ensure CI passes\n- [ ] **Peer Review**: Get at least one approval\n- [ ] **Address Feedback**: Make requested changes\n- [ ] **Squash Commits**: Clean up commit history before merge\n\n## Useful Git Commands\n\n### Interactive Rebase\n```bash\ngit rebase -i HEAD~3  # Rebase last 3 commits\n```\n\n### Stash Changes\n```bash\ngit stash push -m \"work in progress\"\ngit stash pop\n```\n\n### Cherry Pick\n```bash\ngit cherry-pick <commit-hash>\n```\n\n### Reset and Clean\n```bash\ngit reset --hard HEAD~1  # Remove last commit\ngit clean -fd  # Remove untracked files\n```\n\n## Branch Protection Rules\n- Require pull request reviews\n- Require status checks to pass\n- Restrict pushes to main branch\n- Require branches to be up to date",
+        "categoryId": "cat-git",
+        "created_at": "2025-05-15T11:20:00.000Z",
+        "updated_at": "2025-08-07T12:40:00.000Z"
+      },
+      {
+        "id": "prompt-11",
+        "title": "README Template",
+        "body": "# Project Name\n\n> Brief project description in one sentence\n\n[![Build Status](https://img.shields.io/github/workflow/status/username/repo/CI)](https://github.com/username/repo/actions)\n[![Version](https://img.shields.io/npm/v/package-name)](https://www.npmjs.com/package/package-name)\n[![License](https://img.shields.io/github/license/username/repo)](LICENSE)\n\n## ✨ Features\n\n- Feature 1: Description\n- Feature 2: Description\n- Feature 3: Description\n\n## 🚀 Quick Start\n\n### Prerequisites\n\n- Node.js >= 16.0.0\n- npm or yarn\n- Other requirements\n\n### Installation\n\n```bash\n# Clone the repository\ngit clone https://github.com/username/repo.git\n\n# Navigate to project directory\ncd repo\n\n# Install dependencies\nnpm install\n\n# Start development server\nnpm run dev\n```\n\n## 📖 Usage\n\n### Basic Usage\n\n```javascript\nimport { ExampleFunction } from 'package-name';\n\nconst result = ExampleFunction({\n  option1: 'value1',\n  option2: 'value2'\n});\n```\n\n### Advanced Usage\n\nDetailed examples and configuration options.\n\n## 🛠️ Development\n\n### Available Scripts\n\n- `npm run dev` - Start development server\n- `npm run build` - Build for production\n- `npm run test` - Run tests\n- `npm run lint` - Run linter\n- `npm run format` - Format code\n\n### Project Structure\n\n```\nproject-root/\n├── src/\n│   ├── components/\n│   ├── utils/\n│   └── index.js\n├── tests/\n├── docs/\n├── package.json\n└── README.md\n```\n\n## 🧪 Testing\n\n```bash\n# Run all tests\nnpm test\n\n# Run tests in watch mode\nnpm run test:watch\n\n# Generate coverage report\nnpm run test:coverage\n```\n\n## 📚 API Documentation\n\n### `ExampleFunction(options)`\n\n- **options** (Object): Configuration object\n  - **option1** (string): Description\n  - **option2** (number): Description\n\n**Returns**: Description of return value\n\n## 🤝 Contributing\n\n1. Fork the repository\n2. Create your feature branch (`git checkout -b feature/amazing-feature`)\n3. Commit your changes (`git commit -m 'Add amazing feature'`)\n4. Push to the branch (`git push origin feature/amazing-feature`)\n5. Open a Pull Request\n\nSee [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.\n\n## 📄 License\n\nThis project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.\n\n## 🙏 Acknowledgments\n\n- Thanks to contributors\n- Inspired by similar projects\n- Special mentions\n\n## 📞 Support\n\n- 📧 Email: support@example.com\n- 💬 Discord: [Join our server](https://discord.gg/example)\n- 🐛 Issues: [GitHub Issues](https://github.com/username/repo/issues)",
+        "categoryId": "cat-documentation",
+        "created_at": "2025-06-01T08:00:00.000Z",
+        "updated_at": "2025-08-06T10:15:00.000Z"
+      },
+      {
+        "id": "prompt-12",
+        "title": "Database Migration Script Template",
+        "body": "-- Database Migration Script\n-- Migration: [Brief description]\n-- Version: [Version number]\n-- Date: [YYYY-MM-DD]\n-- Author: [Author name]\n\n-- ================================================\n-- MIGRATION UP\n-- ================================================\n\n-- Create new tables\nCREATE TABLE IF NOT EXISTS example_table (\n    id BIGSERIAL PRIMARY KEY,\n    name VARCHAR(255) NOT NULL,\n    email VARCHAR(255) UNIQUE NOT NULL,\n    status VARCHAR(50) DEFAULT 'active',\n    metadata JSONB,\n    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,\n    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP\n);\n\n-- Create indexes\nCREATE INDEX IF NOT EXISTS idx_example_table_email ON example_table(email);\nCREATE INDEX IF NOT EXISTS idx_example_table_status ON example_table(status);\nCREATE INDEX IF NOT EXISTS idx_example_table_created_at ON example_table(created_at);\n\n-- Add foreign key constraints\nALTER TABLE child_table \nADD CONSTRAINT fk_child_example \nFOREIGN KEY (example_id) REFERENCES example_table(id) ON DELETE CASCADE;\n\n-- Insert initial data\nINSERT INTO example_table (name, email, status) VALUES\n('System User', 'system@example.com', 'active'),\n('Admin User', 'admin@example.com', 'active')\nON CONFLICT (email) DO NOTHING;\n\n-- Update existing data\nUPDATE existing_table \nSET new_column = 'default_value' \nWHERE new_column IS NULL;\n\n-- Create triggers\nCREATE OR REPLACE FUNCTION update_updated_at_column()\nRETURNS TRIGGER AS $$\nBEGIN\n    NEW.updated_at = CURRENT_TIMESTAMP;\n    RETURN NEW;\nEND;\n$$ language 'plpgsql';\n\nCREATE TRIGGER update_example_table_updated_at \nBEFORE UPDATE ON example_table \nFOR EACH ROW EXECUTE FUNCTION update_updated_at_column();\n\n-- ================================================\n-- MIGRATION DOWN (Rollback)\n-- ================================================\n\n-- Drop triggers\nDROP TRIGGER IF EXISTS update_example_table_updated_at ON example_table;\nDROP FUNCTION IF EXISTS update_updated_at_column();\n\n-- Remove foreign key constraints\nALTER TABLE child_table DROP CONSTRAINT IF EXISTS fk_child_example;\n\n-- Drop indexes\nDROP INDEX IF EXISTS idx_example_table_created_at;\nDROP INDEX IF EXISTS idx_example_table_status;\nDROP INDEX IF EXISTS idx_example_table_email;\n\n-- Drop tables\nDROP TABLE IF EXISTS example_table;\n\n-- ================================================\n-- VERIFICATION QUERIES\n-- ================================================\n\n-- Verify table creation\nSELECT table_name, column_name, data_type, is_nullable\nFROM information_schema.columns\nWHERE table_name = 'example_table'\nORDER BY ordinal_position;\n\n-- Verify indexes\nSELECT indexname, indexdef\nFROM pg_indexes\nWHERE tablename = 'example_table';\n\n-- Verify data\nSELECT COUNT(*) as total_records FROM example_table;\n\n-- ================================================\n-- NOTES\n-- ================================================\n\n-- 1. Always test migrations on a copy of production data\n-- 2. Consider the impact on application uptime\n-- 3. Have a rollback plan ready\n-- 4. Monitor performance after migration\n-- 5. Update application code if schema changes affect queries",
+        "categoryId": "cat-architecture",
+        "created_at": "2025-06-15T14:25:00.000Z",
+        "updated_at": "2025-08-05T11:30:00.000Z"
+      }
+    ]
+  }
+}

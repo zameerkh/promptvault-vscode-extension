@@ -1,0 +1,1650 @@
+{
+  "version": "1.0",
+  "exportedAt": "2025-08-17T08:15:57.782Z",
+  "data": {
+    "categories": [
+      {
+        "id": "cat-perf-0",
+        "name": "Web Development"
+      },
+      {
+        "id": "cat-perf-1",
+        "name": "Backend Development"
+      },
+      {
+        "id": "cat-perf-2",
+        "name": "Frontend Development"
+      },
+      {
+        "id": "cat-perf-3",
+        "name": "Database Design"
+      },
+      {
+        "id": "cat-perf-4",
+        "name": "DevOps"
+      },
+      {
+        "id": "cat-perf-5",
+        "name": "Testing"
+      },
+      {
+        "id": "cat-perf-6",
+        "name": "Security"
+      },
+      {
+        "id": "cat-perf-7",
+        "name": "Performance"
+      },
+      {
+        "id": "cat-perf-8",
+        "name": "Architecture"
+      },
+      {
+        "id": "cat-perf-9",
+        "name": "Code Review"
+      }
+    ],
+    "prompts": [
+      {
+        "id": "perf-prompt-0",
+        "title": "Code Review Template #1",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization",
+        "categoryId": "cat-perf-0",
+        "created_at": "2025-08-09T20:41:13.155Z",
+        "updated_at": "2025-08-16T14:58:05.894Z"
+      },
+      {
+        "id": "perf-prompt-1",
+        "title": "API Endpoint Documentation #2",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error",
+        "categoryId": "cat-perf-1",
+        "created_at": "2025-08-16T16:51:00.889Z",
+        "updated_at": "2025-08-13T09:12:00.979Z"
+      },
+      {
+        "id": "perf-prompt-2",
+        "title": "Bug Report Template #3",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]",
+        "categoryId": "cat-perf-2",
+        "created_at": "2025-07-26T19:11:04.068Z",
+        "updated_at": "2025-08-12T03:50:20.370Z"
+      },
+      {
+        "id": "perf-prompt-3",
+        "title": "Database Query Optimization #4",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```",
+        "categoryId": "cat-perf-3",
+        "created_at": "2025-07-26T05:55:11.265Z",
+        "updated_at": "2025-08-11T03:50:16.858Z"
+      },
+      {
+        "id": "perf-prompt-4",
+        "title": "Security Checklist #5",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting",
+        "categoryId": "cat-perf-4",
+        "created_at": "2025-08-14T00:59:54.798Z",
+        "updated_at": "2025-08-11T04:13:11.817Z"
+      },
+      {
+        "id": "perf-prompt-5",
+        "title": "Code Review Template #6",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization",
+        "categoryId": "cat-perf-5",
+        "created_at": "2025-08-11T11:09:10.920Z",
+        "updated_at": "2025-08-14T17:51:55.052Z"
+      },
+      {
+        "id": "perf-prompt-6",
+        "title": "API Endpoint Documentation #7",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 1 ---",
+        "categoryId": "cat-perf-6",
+        "created_at": "2025-08-02T12:19:28.681Z",
+        "updated_at": "2025-08-13T11:32:00.290Z"
+      },
+      {
+        "id": "perf-prompt-7",
+        "title": "Bug Report Template #8",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 1 ---",
+        "categoryId": "cat-perf-7",
+        "created_at": "2025-07-29T03:54:46.326Z",
+        "updated_at": "2025-08-10T08:34:07.336Z"
+      },
+      {
+        "id": "perf-prompt-8",
+        "title": "Database Query Optimization #9",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 1 ---",
+        "categoryId": "cat-perf-8",
+        "created_at": "2025-08-03T00:18:42.269Z",
+        "updated_at": "2025-08-11T21:34:14.006Z"
+      },
+      {
+        "id": "perf-prompt-9",
+        "title": "Security Checklist #10",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 1 ---",
+        "categoryId": "cat-perf-9",
+        "created_at": "2025-08-10T09:15:57.936Z",
+        "updated_at": "2025-08-13T18:01:20.415Z"
+      },
+      {
+        "id": "perf-prompt-10",
+        "title": "Code Review Template #11",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 2 ---",
+        "categoryId": "cat-perf-0",
+        "created_at": "2025-07-30T08:14:56.190Z",
+        "updated_at": "2025-08-14T08:19:56.371Z"
+      },
+      {
+        "id": "perf-prompt-11",
+        "title": "API Endpoint Documentation #12",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 2 ---",
+        "categoryId": "cat-perf-1",
+        "created_at": "2025-08-06T18:21:30.505Z",
+        "updated_at": "2025-08-10T19:00:35.799Z"
+      },
+      {
+        "id": "perf-prompt-12",
+        "title": "Bug Report Template #13",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 2 ---",
+        "categoryId": "cat-perf-2",
+        "created_at": "2025-07-30T00:03:38.180Z",
+        "updated_at": "2025-08-11T14:42:35.876Z"
+      },
+      {
+        "id": "perf-prompt-13",
+        "title": "Database Query Optimization #14",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 2 ---",
+        "categoryId": "cat-perf-3",
+        "created_at": "2025-08-10T05:33:54.909Z",
+        "updated_at": "2025-08-11T13:26:04.789Z"
+      },
+      {
+        "id": "perf-prompt-14",
+        "title": "Security Checklist #15",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 2 ---",
+        "categoryId": "cat-perf-4",
+        "created_at": "2025-08-02T01:00:37.139Z",
+        "updated_at": "2025-08-12T16:16:13.957Z"
+      },
+      {
+        "id": "perf-prompt-15",
+        "title": "Code Review Template #16",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 3 ---",
+        "categoryId": "cat-perf-5",
+        "created_at": "2025-08-12T14:57:23.692Z",
+        "updated_at": "2025-08-10T14:59:10.734Z"
+      },
+      {
+        "id": "perf-prompt-16",
+        "title": "API Endpoint Documentation #17",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 3 ---",
+        "categoryId": "cat-perf-6",
+        "created_at": "2025-07-21T11:51:39.223Z",
+        "updated_at": "2025-08-14T16:57:21.748Z"
+      },
+      {
+        "id": "perf-prompt-17",
+        "title": "Bug Report Template #18",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 3 ---",
+        "categoryId": "cat-perf-7",
+        "created_at": "2025-08-12T16:58:12.103Z",
+        "updated_at": "2025-08-14T23:22:16.352Z"
+      },
+      {
+        "id": "perf-prompt-18",
+        "title": "Database Query Optimization #19",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 3 ---",
+        "categoryId": "cat-perf-8",
+        "created_at": "2025-07-22T09:58:34.188Z",
+        "updated_at": "2025-08-15T13:15:49.880Z"
+      },
+      {
+        "id": "perf-prompt-19",
+        "title": "Security Checklist #20",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 3 ---",
+        "categoryId": "cat-perf-9",
+        "created_at": "2025-07-19T09:36:56.446Z",
+        "updated_at": "2025-08-13T03:59:52.166Z"
+      },
+      {
+        "id": "perf-prompt-20",
+        "title": "Code Review Template #21",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 4 ---",
+        "categoryId": "cat-perf-0",
+        "created_at": "2025-08-01T14:54:51.986Z",
+        "updated_at": "2025-08-11T06:31:50.774Z"
+      },
+      {
+        "id": "perf-prompt-21",
+        "title": "API Endpoint Documentation #22",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 4 ---",
+        "categoryId": "cat-perf-1",
+        "created_at": "2025-07-30T22:53:58.187Z",
+        "updated_at": "2025-08-14T03:53:32.886Z"
+      },
+      {
+        "id": "perf-prompt-22",
+        "title": "Bug Report Template #23",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 4 ---",
+        "categoryId": "cat-perf-2",
+        "created_at": "2025-07-27T01:05:05.557Z",
+        "updated_at": "2025-08-16T18:15:30.877Z"
+      },
+      {
+        "id": "perf-prompt-23",
+        "title": "Database Query Optimization #24",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 4 ---",
+        "categoryId": "cat-perf-3",
+        "created_at": "2025-07-19T05:00:12.865Z",
+        "updated_at": "2025-08-13T20:02:53.543Z"
+      },
+      {
+        "id": "perf-prompt-24",
+        "title": "Security Checklist #25",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 4 ---",
+        "categoryId": "cat-perf-4",
+        "created_at": "2025-07-29T22:40:34.245Z",
+        "updated_at": "2025-08-11T02:16:58.891Z"
+      },
+      {
+        "id": "perf-prompt-25",
+        "title": "Code Review Template #26",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 5 ---",
+        "categoryId": "cat-perf-5",
+        "created_at": "2025-07-18T12:12:02.669Z",
+        "updated_at": "2025-08-10T10:01:22.566Z"
+      },
+      {
+        "id": "perf-prompt-26",
+        "title": "API Endpoint Documentation #27",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 5 ---",
+        "categoryId": "cat-perf-6",
+        "created_at": "2025-08-02T18:42:39.915Z",
+        "updated_at": "2025-08-13T15:09:50.726Z"
+      },
+      {
+        "id": "perf-prompt-27",
+        "title": "Bug Report Template #28",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 5 ---",
+        "categoryId": "cat-perf-7",
+        "created_at": "2025-07-24T14:22:03.052Z",
+        "updated_at": "2025-08-14T11:03:24.865Z"
+      },
+      {
+        "id": "perf-prompt-28",
+        "title": "Database Query Optimization #29",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 5 ---",
+        "categoryId": "cat-perf-8",
+        "created_at": "2025-08-07T01:46:53.153Z",
+        "updated_at": "2025-08-11T08:20:34.099Z"
+      },
+      {
+        "id": "perf-prompt-29",
+        "title": "Security Checklist #30",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 5 ---",
+        "categoryId": "cat-perf-9",
+        "created_at": "2025-08-15T03:11:24.676Z",
+        "updated_at": "2025-08-11T12:00:28.914Z"
+      },
+      {
+        "id": "perf-prompt-30",
+        "title": "Code Review Template #31",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 6 ---",
+        "categoryId": "cat-perf-0",
+        "created_at": "2025-07-28T14:43:56.166Z",
+        "updated_at": "2025-08-15T17:31:33.694Z"
+      },
+      {
+        "id": "perf-prompt-31",
+        "title": "API Endpoint Documentation #32",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 6 ---",
+        "categoryId": "cat-perf-1",
+        "created_at": "2025-08-14T02:00:40.492Z",
+        "updated_at": "2025-08-11T16:03:07.054Z"
+      },
+      {
+        "id": "perf-prompt-32",
+        "title": "Bug Report Template #33",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 6 ---",
+        "categoryId": "cat-perf-2",
+        "created_at": "2025-07-29T03:52:30.338Z",
+        "updated_at": "2025-08-16T18:52:01.217Z"
+      },
+      {
+        "id": "perf-prompt-33",
+        "title": "Database Query Optimization #34",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 6 ---",
+        "categoryId": "cat-perf-3",
+        "created_at": "2025-07-22T15:25:30.217Z",
+        "updated_at": "2025-08-12T09:56:36.142Z"
+      },
+      {
+        "id": "perf-prompt-34",
+        "title": "Security Checklist #35",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 6 ---",
+        "categoryId": "cat-perf-4",
+        "created_at": "2025-07-19T00:28:55.791Z",
+        "updated_at": "2025-08-12T05:27:15.535Z"
+      },
+      {
+        "id": "perf-prompt-35",
+        "title": "Code Review Template #36",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 7 ---",
+        "categoryId": "cat-perf-5",
+        "created_at": "2025-07-22T23:43:54.261Z",
+        "updated_at": "2025-08-11T19:14:20.137Z"
+      },
+      {
+        "id": "perf-prompt-36",
+        "title": "API Endpoint Documentation #37",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 7 ---",
+        "categoryId": "cat-perf-6",
+        "created_at": "2025-08-14T06:52:51.838Z",
+        "updated_at": "2025-08-11T13:36:35.661Z"
+      },
+      {
+        "id": "perf-prompt-37",
+        "title": "Bug Report Template #38",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 7 ---",
+        "categoryId": "cat-perf-7",
+        "created_at": "2025-07-31T11:19:23.793Z",
+        "updated_at": "2025-08-16T17:24:14.216Z"
+      },
+      {
+        "id": "perf-prompt-38",
+        "title": "Database Query Optimization #39",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 7 ---",
+        "categoryId": "cat-perf-8",
+        "created_at": "2025-07-27T16:00:19.589Z",
+        "updated_at": "2025-08-10T13:18:02.632Z"
+      },
+      {
+        "id": "perf-prompt-39",
+        "title": "Security Checklist #40",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 7 ---",
+        "categoryId": "cat-perf-9",
+        "created_at": "2025-08-15T01:34:33.882Z",
+        "updated_at": "2025-08-13T22:32:32.949Z"
+      },
+      {
+        "id": "perf-prompt-40",
+        "title": "Code Review Template #41",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 8 ---",
+        "categoryId": "cat-perf-0",
+        "created_at": "2025-08-12T23:09:36.603Z",
+        "updated_at": "2025-08-12T17:28:31.650Z"
+      },
+      {
+        "id": "perf-prompt-41",
+        "title": "API Endpoint Documentation #42",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 8 ---",
+        "categoryId": "cat-perf-1",
+        "created_at": "2025-08-13T16:57:22.911Z",
+        "updated_at": "2025-08-15T01:31:43.530Z"
+      },
+      {
+        "id": "perf-prompt-42",
+        "title": "Bug Report Template #43",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 8 ---",
+        "categoryId": "cat-perf-2",
+        "created_at": "2025-08-11T15:43:12.403Z",
+        "updated_at": "2025-08-11T11:35:35.726Z"
+      },
+      {
+        "id": "perf-prompt-43",
+        "title": "Database Query Optimization #44",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 8 ---",
+        "categoryId": "cat-perf-3",
+        "created_at": "2025-08-08T14:11:36.270Z",
+        "updated_at": "2025-08-15T00:49:51.363Z"
+      },
+      {
+        "id": "perf-prompt-44",
+        "title": "Security Checklist #45",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 8 ---",
+        "categoryId": "cat-perf-4",
+        "created_at": "2025-08-03T10:38:31.357Z",
+        "updated_at": "2025-08-12T08:26:44.951Z"
+      },
+      {
+        "id": "perf-prompt-45",
+        "title": "Code Review Template #46",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 9 ---",
+        "categoryId": "cat-perf-5",
+        "created_at": "2025-07-23T19:09:42.145Z",
+        "updated_at": "2025-08-11T06:27:47.806Z"
+      },
+      {
+        "id": "perf-prompt-46",
+        "title": "API Endpoint Documentation #47",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 9 ---",
+        "categoryId": "cat-perf-6",
+        "created_at": "2025-08-04T01:06:23.333Z",
+        "updated_at": "2025-08-12T16:06:13.163Z"
+      },
+      {
+        "id": "perf-prompt-47",
+        "title": "Bug Report Template #48",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 9 ---",
+        "categoryId": "cat-perf-7",
+        "created_at": "2025-07-28T02:09:26.270Z",
+        "updated_at": "2025-08-15T19:44:58.428Z"
+      },
+      {
+        "id": "perf-prompt-48",
+        "title": "Database Query Optimization #49",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 9 ---",
+        "categoryId": "cat-perf-8",
+        "created_at": "2025-07-31T16:00:39.059Z",
+        "updated_at": "2025-08-14T23:52:27.963Z"
+      },
+      {
+        "id": "perf-prompt-49",
+        "title": "Security Checklist #50",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 9 ---",
+        "categoryId": "cat-perf-9",
+        "created_at": "2025-08-04T05:04:01.334Z",
+        "updated_at": "2025-08-14T00:30:00.596Z"
+      },
+      {
+        "id": "perf-prompt-50",
+        "title": "Code Review Template #51",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 10 ---",
+        "categoryId": "cat-perf-0",
+        "created_at": "2025-08-10T01:10:47.110Z",
+        "updated_at": "2025-08-16T05:27:35.234Z"
+      },
+      {
+        "id": "perf-prompt-51",
+        "title": "API Endpoint Documentation #52",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 10 ---",
+        "categoryId": "cat-perf-1",
+        "created_at": "2025-07-28T14:10:35.666Z",
+        "updated_at": "2025-08-12T08:29:25.683Z"
+      },
+      {
+        "id": "perf-prompt-52",
+        "title": "Bug Report Template #53",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 10 ---",
+        "categoryId": "cat-perf-2",
+        "created_at": "2025-08-10T19:10:25.127Z",
+        "updated_at": "2025-08-13T08:25:55.199Z"
+      },
+      {
+        "id": "perf-prompt-53",
+        "title": "Database Query Optimization #54",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 10 ---",
+        "categoryId": "cat-perf-3",
+        "created_at": "2025-08-15T12:29:49.117Z",
+        "updated_at": "2025-08-10T12:40:12.199Z"
+      },
+      {
+        "id": "perf-prompt-54",
+        "title": "Security Checklist #55",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 10 ---",
+        "categoryId": "cat-perf-4",
+        "created_at": "2025-07-28T16:36:12.812Z",
+        "updated_at": "2025-08-11T19:41:45.054Z"
+      },
+      {
+        "id": "perf-prompt-55",
+        "title": "Code Review Template #56",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 11 ---",
+        "categoryId": "cat-perf-5",
+        "created_at": "2025-07-24T16:55:48.751Z",
+        "updated_at": "2025-08-12T14:45:37.734Z"
+      },
+      {
+        "id": "perf-prompt-56",
+        "title": "API Endpoint Documentation #57",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 11 ---",
+        "categoryId": "cat-perf-6",
+        "created_at": "2025-08-01T04:54:48.101Z",
+        "updated_at": "2025-08-12T08:27:20.712Z"
+      },
+      {
+        "id": "perf-prompt-57",
+        "title": "Bug Report Template #58",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 11 ---",
+        "categoryId": "cat-perf-7",
+        "created_at": "2025-07-31T13:14:12.917Z",
+        "updated_at": "2025-08-17T07:16:03.619Z"
+      },
+      {
+        "id": "perf-prompt-58",
+        "title": "Database Query Optimization #59",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 11 ---",
+        "categoryId": "cat-perf-8",
+        "created_at": "2025-08-13T00:51:21.213Z",
+        "updated_at": "2025-08-14T22:56:03.079Z"
+      },
+      {
+        "id": "perf-prompt-59",
+        "title": "Security Checklist #60",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 11 ---",
+        "categoryId": "cat-perf-9",
+        "created_at": "2025-08-03T08:32:08.232Z",
+        "updated_at": "2025-08-16T20:47:32.734Z"
+      },
+      {
+        "id": "perf-prompt-60",
+        "title": "Code Review Template #61",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 12 ---",
+        "categoryId": "cat-perf-0",
+        "created_at": "2025-07-19T23:30:41.027Z",
+        "updated_at": "2025-08-10T13:51:30.215Z"
+      },
+      {
+        "id": "perf-prompt-61",
+        "title": "API Endpoint Documentation #62",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 12 ---",
+        "categoryId": "cat-perf-1",
+        "created_at": "2025-08-03T12:32:19.727Z",
+        "updated_at": "2025-08-15T11:42:23.198Z"
+      },
+      {
+        "id": "perf-prompt-62",
+        "title": "Bug Report Template #63",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 12 ---",
+        "categoryId": "cat-perf-2",
+        "created_at": "2025-08-09T11:21:00.945Z",
+        "updated_at": "2025-08-13T07:22:30.851Z"
+      },
+      {
+        "id": "perf-prompt-63",
+        "title": "Database Query Optimization #64",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 12 ---",
+        "categoryId": "cat-perf-3",
+        "created_at": "2025-07-18T18:33:45.461Z",
+        "updated_at": "2025-08-13T23:36:50.794Z"
+      },
+      {
+        "id": "perf-prompt-64",
+        "title": "Security Checklist #65",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 12 ---",
+        "categoryId": "cat-perf-4",
+        "created_at": "2025-07-28T03:38:55.266Z",
+        "updated_at": "2025-08-10T17:49:41.016Z"
+      },
+      {
+        "id": "perf-prompt-65",
+        "title": "Code Review Template #66",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 13 ---",
+        "categoryId": "cat-perf-5",
+        "created_at": "2025-08-07T12:20:47.995Z",
+        "updated_at": "2025-08-14T21:33:01.084Z"
+      },
+      {
+        "id": "perf-prompt-66",
+        "title": "API Endpoint Documentation #67",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 13 ---",
+        "categoryId": "cat-perf-6",
+        "created_at": "2025-08-04T02:46:15.589Z",
+        "updated_at": "2025-08-12T20:18:29.981Z"
+      },
+      {
+        "id": "perf-prompt-67",
+        "title": "Bug Report Template #68",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 13 ---",
+        "categoryId": "cat-perf-7",
+        "created_at": "2025-08-15T12:49:51.649Z",
+        "updated_at": "2025-08-14T12:12:48.392Z"
+      },
+      {
+        "id": "perf-prompt-68",
+        "title": "Database Query Optimization #69",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 13 ---",
+        "categoryId": "cat-perf-8",
+        "created_at": "2025-08-13T13:19:32.703Z",
+        "updated_at": "2025-08-16T21:18:09.991Z"
+      },
+      {
+        "id": "perf-prompt-69",
+        "title": "Security Checklist #70",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 13 ---",
+        "categoryId": "cat-perf-9",
+        "created_at": "2025-07-27T01:24:23.596Z",
+        "updated_at": "2025-08-11T02:09:11.029Z"
+      },
+      {
+        "id": "perf-prompt-70",
+        "title": "Code Review Template #71",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 14 ---",
+        "categoryId": "cat-perf-0",
+        "created_at": "2025-07-28T17:29:41.788Z",
+        "updated_at": "2025-08-12T20:40:39.225Z"
+      },
+      {
+        "id": "perf-prompt-71",
+        "title": "API Endpoint Documentation #72",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 14 ---",
+        "categoryId": "cat-perf-1",
+        "created_at": "2025-08-06T07:50:17.334Z",
+        "updated_at": "2025-08-10T11:44:50.248Z"
+      },
+      {
+        "id": "perf-prompt-72",
+        "title": "Bug Report Template #73",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 14 ---",
+        "categoryId": "cat-perf-2",
+        "created_at": "2025-08-08T15:40:03.411Z",
+        "updated_at": "2025-08-11T17:23:35.258Z"
+      },
+      {
+        "id": "perf-prompt-73",
+        "title": "Database Query Optimization #74",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 14 ---",
+        "categoryId": "cat-perf-3",
+        "created_at": "2025-08-10T00:59:50.657Z",
+        "updated_at": "2025-08-14T18:54:50.298Z"
+      },
+      {
+        "id": "perf-prompt-74",
+        "title": "Security Checklist #75",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 14 ---",
+        "categoryId": "cat-perf-4",
+        "created_at": "2025-08-02T20:21:52.432Z",
+        "updated_at": "2025-08-13T04:34:12.396Z"
+      },
+      {
+        "id": "perf-prompt-75",
+        "title": "Code Review Template #76",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 15 ---",
+        "categoryId": "cat-perf-5",
+        "created_at": "2025-07-19T07:23:40.176Z",
+        "updated_at": "2025-08-12T01:44:17.960Z"
+      },
+      {
+        "id": "perf-prompt-76",
+        "title": "API Endpoint Documentation #77",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 15 ---",
+        "categoryId": "cat-perf-6",
+        "created_at": "2025-08-09T12:21:55.993Z",
+        "updated_at": "2025-08-15T05:23:34.874Z"
+      },
+      {
+        "id": "perf-prompt-77",
+        "title": "Bug Report Template #78",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 15 ---",
+        "categoryId": "cat-perf-7",
+        "created_at": "2025-08-01T05:17:17.585Z",
+        "updated_at": "2025-08-13T11:20:12.894Z"
+      },
+      {
+        "id": "perf-prompt-78",
+        "title": "Database Query Optimization #79",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 15 ---",
+        "categoryId": "cat-perf-8",
+        "created_at": "2025-08-11T12:04:54.074Z",
+        "updated_at": "2025-08-15T16:47:24.877Z"
+      },
+      {
+        "id": "perf-prompt-79",
+        "title": "Security Checklist #80",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 15 ---",
+        "categoryId": "cat-perf-9",
+        "created_at": "2025-08-03T15:40:37.336Z",
+        "updated_at": "2025-08-13T21:09:05.065Z"
+      },
+      {
+        "id": "perf-prompt-80",
+        "title": "Code Review Template #81",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 16 ---",
+        "categoryId": "cat-perf-0",
+        "created_at": "2025-07-30T14:08:36.579Z",
+        "updated_at": "2025-08-15T09:13:40.959Z"
+      },
+      {
+        "id": "perf-prompt-81",
+        "title": "API Endpoint Documentation #82",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 16 ---",
+        "categoryId": "cat-perf-1",
+        "created_at": "2025-08-11T11:08:35.364Z",
+        "updated_at": "2025-08-13T21:20:20.345Z"
+      },
+      {
+        "id": "perf-prompt-82",
+        "title": "Bug Report Template #83",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 16 ---",
+        "categoryId": "cat-perf-2",
+        "created_at": "2025-08-02T04:24:19.142Z",
+        "updated_at": "2025-08-10T14:27:29.402Z"
+      },
+      {
+        "id": "perf-prompt-83",
+        "title": "Database Query Optimization #84",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 16 ---",
+        "categoryId": "cat-perf-3",
+        "created_at": "2025-07-22T06:22:09.794Z",
+        "updated_at": "2025-08-14T06:23:20.372Z"
+      },
+      {
+        "id": "perf-prompt-84",
+        "title": "Security Checklist #85",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 16 ---",
+        "categoryId": "cat-perf-4",
+        "created_at": "2025-07-27T08:59:23.958Z",
+        "updated_at": "2025-08-11T21:22:43.471Z"
+      },
+      {
+        "id": "perf-prompt-85",
+        "title": "Code Review Template #86",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 17 ---",
+        "categoryId": "cat-perf-5",
+        "created_at": "2025-08-01T18:59:25.006Z",
+        "updated_at": "2025-08-12T07:31:51.426Z"
+      },
+      {
+        "id": "perf-prompt-86",
+        "title": "API Endpoint Documentation #87",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 17 ---",
+        "categoryId": "cat-perf-6",
+        "created_at": "2025-07-29T02:41:09.530Z",
+        "updated_at": "2025-08-16T10:40:20.356Z"
+      },
+      {
+        "id": "perf-prompt-87",
+        "title": "Bug Report Template #88",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 17 ---",
+        "categoryId": "cat-perf-7",
+        "created_at": "2025-07-26T16:17:18.081Z",
+        "updated_at": "2025-08-13T01:02:51.310Z"
+      },
+      {
+        "id": "perf-prompt-88",
+        "title": "Database Query Optimization #89",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 17 ---",
+        "categoryId": "cat-perf-8",
+        "created_at": "2025-08-04T12:33:27.053Z",
+        "updated_at": "2025-08-12T02:46:40.146Z"
+      },
+      {
+        "id": "perf-prompt-89",
+        "title": "Security Checklist #90",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 17 ---",
+        "categoryId": "cat-perf-9",
+        "created_at": "2025-07-30T09:56:38.702Z",
+        "updated_at": "2025-08-10T20:29:23.901Z"
+      },
+      {
+        "id": "perf-prompt-90",
+        "title": "Code Review Template #91",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 18 ---",
+        "categoryId": "cat-perf-0",
+        "created_at": "2025-07-20T18:28:58.415Z",
+        "updated_at": "2025-08-14T06:57:43.229Z"
+      },
+      {
+        "id": "perf-prompt-91",
+        "title": "API Endpoint Documentation #92",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 18 ---",
+        "categoryId": "cat-perf-1",
+        "created_at": "2025-08-10T00:44:42.533Z",
+        "updated_at": "2025-08-13T21:00:13.346Z"
+      },
+      {
+        "id": "perf-prompt-92",
+        "title": "Bug Report Template #93",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 18 ---",
+        "categoryId": "cat-perf-2",
+        "created_at": "2025-07-19T09:01:29.571Z",
+        "updated_at": "2025-08-16T17:02:08.530Z"
+      },
+      {
+        "id": "perf-prompt-93",
+        "title": "Database Query Optimization #94",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 18 ---",
+        "categoryId": "cat-perf-3",
+        "created_at": "2025-07-29T10:28:32.683Z",
+        "updated_at": "2025-08-11T18:12:57.324Z"
+      },
+      {
+        "id": "perf-prompt-94",
+        "title": "Security Checklist #95",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 18 ---",
+        "categoryId": "cat-perf-4",
+        "created_at": "2025-08-11T18:01:46.480Z",
+        "updated_at": "2025-08-13T09:11:14.844Z"
+      },
+      {
+        "id": "perf-prompt-95",
+        "title": "Code Review Template #96",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 19 ---",
+        "categoryId": "cat-perf-5",
+        "created_at": "2025-07-24T07:38:12.249Z",
+        "updated_at": "2025-08-17T05:37:15.442Z"
+      },
+      {
+        "id": "perf-prompt-96",
+        "title": "API Endpoint Documentation #97",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 19 ---",
+        "categoryId": "cat-perf-6",
+        "created_at": "2025-07-23T11:18:17.675Z",
+        "updated_at": "2025-08-17T05:08:03.951Z"
+      },
+      {
+        "id": "perf-prompt-97",
+        "title": "Bug Report Template #98",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 19 ---",
+        "categoryId": "cat-perf-7",
+        "created_at": "2025-07-24T09:31:32.306Z",
+        "updated_at": "2025-08-16T01:19:33.282Z"
+      },
+      {
+        "id": "perf-prompt-98",
+        "title": "Database Query Optimization #99",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 19 ---",
+        "categoryId": "cat-perf-8",
+        "created_at": "2025-07-30T07:28:13.848Z",
+        "updated_at": "2025-08-14T14:44:28.499Z"
+      },
+      {
+        "id": "perf-prompt-99",
+        "title": "Security Checklist #100",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 19 ---",
+        "categoryId": "cat-perf-9",
+        "created_at": "2025-07-28T05:09:22.752Z",
+        "updated_at": "2025-08-10T13:36:08.721Z"
+      },
+      {
+        "id": "perf-prompt-100",
+        "title": "Code Review Template #101",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 20 ---",
+        "categoryId": "cat-perf-0",
+        "created_at": "2025-07-30T23:51:34.250Z",
+        "updated_at": "2025-08-11T17:26:18.690Z"
+      },
+      {
+        "id": "perf-prompt-101",
+        "title": "API Endpoint Documentation #102",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 20 ---",
+        "categoryId": "cat-perf-1",
+        "created_at": "2025-08-07T14:46:31.504Z",
+        "updated_at": "2025-08-13T15:19:57.063Z"
+      },
+      {
+        "id": "perf-prompt-102",
+        "title": "Bug Report Template #103",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 20 ---",
+        "categoryId": "cat-perf-2",
+        "created_at": "2025-07-20T22:36:03.896Z",
+        "updated_at": "2025-08-12T03:32:55.513Z"
+      },
+      {
+        "id": "perf-prompt-103",
+        "title": "Database Query Optimization #104",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 20 ---",
+        "categoryId": "cat-perf-3",
+        "created_at": "2025-07-28T10:25:57.424Z",
+        "updated_at": "2025-08-15T14:37:20.173Z"
+      },
+      {
+        "id": "perf-prompt-104",
+        "title": "Security Checklist #105",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 20 ---",
+        "categoryId": "cat-perf-4",
+        "created_at": "2025-08-15T19:35:01.861Z",
+        "updated_at": "2025-08-16T12:52:53.824Z"
+      },
+      {
+        "id": "perf-prompt-105",
+        "title": "Code Review Template #106",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 21 ---",
+        "categoryId": "cat-perf-5",
+        "created_at": "2025-07-24T10:52:04.378Z",
+        "updated_at": "2025-08-14T10:19:48.105Z"
+      },
+      {
+        "id": "perf-prompt-106",
+        "title": "API Endpoint Documentation #107",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 21 ---",
+        "categoryId": "cat-perf-6",
+        "created_at": "2025-08-14T21:39:33.302Z",
+        "updated_at": "2025-08-13T23:23:14.291Z"
+      },
+      {
+        "id": "perf-prompt-107",
+        "title": "Bug Report Template #108",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 21 ---",
+        "categoryId": "cat-perf-7",
+        "created_at": "2025-07-19T14:12:31.704Z",
+        "updated_at": "2025-08-14T01:51:10.829Z"
+      },
+      {
+        "id": "perf-prompt-108",
+        "title": "Database Query Optimization #109",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 21 ---",
+        "categoryId": "cat-perf-8",
+        "created_at": "2025-07-27T10:11:22.694Z",
+        "updated_at": "2025-08-11T03:34:10.223Z"
+      },
+      {
+        "id": "perf-prompt-109",
+        "title": "Security Checklist #110",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 21 ---",
+        "categoryId": "cat-perf-9",
+        "created_at": "2025-07-20T02:45:15.290Z",
+        "updated_at": "2025-08-14T19:28:18.609Z"
+      },
+      {
+        "id": "perf-prompt-110",
+        "title": "Code Review Template #111",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 22 ---",
+        "categoryId": "cat-perf-0",
+        "created_at": "2025-08-11T20:21:11.393Z",
+        "updated_at": "2025-08-16T06:09:51.209Z"
+      },
+      {
+        "id": "perf-prompt-111",
+        "title": "API Endpoint Documentation #112",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 22 ---",
+        "categoryId": "cat-perf-1",
+        "created_at": "2025-08-12T20:46:42.769Z",
+        "updated_at": "2025-08-15T21:58:37.213Z"
+      },
+      {
+        "id": "perf-prompt-112",
+        "title": "Bug Report Template #113",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 22 ---",
+        "categoryId": "cat-perf-2",
+        "created_at": "2025-08-02T16:09:55.277Z",
+        "updated_at": "2025-08-10T17:00:11.250Z"
+      },
+      {
+        "id": "perf-prompt-113",
+        "title": "Database Query Optimization #114",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 22 ---",
+        "categoryId": "cat-perf-3",
+        "created_at": "2025-07-20T21:30:54.809Z",
+        "updated_at": "2025-08-11T13:18:04.218Z"
+      },
+      {
+        "id": "perf-prompt-114",
+        "title": "Security Checklist #115",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 22 ---",
+        "categoryId": "cat-perf-4",
+        "created_at": "2025-07-26T09:24:09.234Z",
+        "updated_at": "2025-08-16T12:53:50.113Z"
+      },
+      {
+        "id": "perf-prompt-115",
+        "title": "Code Review Template #116",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 23 ---",
+        "categoryId": "cat-perf-5",
+        "created_at": "2025-08-14T16:18:59.887Z",
+        "updated_at": "2025-08-10T14:06:28.632Z"
+      },
+      {
+        "id": "perf-prompt-116",
+        "title": "API Endpoint Documentation #117",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 23 ---",
+        "categoryId": "cat-perf-6",
+        "created_at": "2025-07-27T16:44:09.358Z",
+        "updated_at": "2025-08-11T10:21:29.534Z"
+      },
+      {
+        "id": "perf-prompt-117",
+        "title": "Bug Report Template #118",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 23 ---",
+        "categoryId": "cat-perf-7",
+        "created_at": "2025-07-26T23:14:47.125Z",
+        "updated_at": "2025-08-17T03:56:58.734Z"
+      },
+      {
+        "id": "perf-prompt-118",
+        "title": "Database Query Optimization #119",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 23 ---",
+        "categoryId": "cat-perf-8",
+        "created_at": "2025-08-07T23:03:34.697Z",
+        "updated_at": "2025-08-12T10:46:05.819Z"
+      },
+      {
+        "id": "perf-prompt-119",
+        "title": "Security Checklist #120",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 23 ---",
+        "categoryId": "cat-perf-9",
+        "created_at": "2025-07-22T15:31:29.945Z",
+        "updated_at": "2025-08-14T20:20:25.137Z"
+      },
+      {
+        "id": "perf-prompt-120",
+        "title": "Code Review Template #121",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 24 ---",
+        "categoryId": "cat-perf-0",
+        "created_at": "2025-07-18T09:26:10.404Z",
+        "updated_at": "2025-08-16T16:33:43.051Z"
+      },
+      {
+        "id": "perf-prompt-121",
+        "title": "API Endpoint Documentation #122",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 24 ---",
+        "categoryId": "cat-perf-1",
+        "created_at": "2025-07-25T16:55:01.541Z",
+        "updated_at": "2025-08-10T14:50:09.159Z"
+      },
+      {
+        "id": "perf-prompt-122",
+        "title": "Bug Report Template #123",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 24 ---",
+        "categoryId": "cat-perf-2",
+        "created_at": "2025-08-07T14:06:18.176Z",
+        "updated_at": "2025-08-11T22:02:05.152Z"
+      },
+      {
+        "id": "perf-prompt-123",
+        "title": "Database Query Optimization #124",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 24 ---",
+        "categoryId": "cat-perf-3",
+        "created_at": "2025-08-03T04:22:56.520Z",
+        "updated_at": "2025-08-10T13:03:26.362Z"
+      },
+      {
+        "id": "perf-prompt-124",
+        "title": "Security Checklist #125",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 24 ---",
+        "categoryId": "cat-perf-4",
+        "created_at": "2025-08-08T10:52:05.633Z",
+        "updated_at": "2025-08-16T11:56:17.983Z"
+      },
+      {
+        "id": "perf-prompt-125",
+        "title": "Code Review Template #126",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 25 ---",
+        "categoryId": "cat-perf-5",
+        "created_at": "2025-08-16T23:53:07.227Z",
+        "updated_at": "2025-08-13T05:48:55.807Z"
+      },
+      {
+        "id": "perf-prompt-126",
+        "title": "API Endpoint Documentation #127",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 25 ---",
+        "categoryId": "cat-perf-6",
+        "created_at": "2025-08-13T13:42:37.777Z",
+        "updated_at": "2025-08-10T20:06:52.027Z"
+      },
+      {
+        "id": "perf-prompt-127",
+        "title": "Bug Report Template #128",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 25 ---",
+        "categoryId": "cat-perf-7",
+        "created_at": "2025-07-31T06:07:06.275Z",
+        "updated_at": "2025-08-12T07:48:34.822Z"
+      },
+      {
+        "id": "perf-prompt-128",
+        "title": "Database Query Optimization #129",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 25 ---",
+        "categoryId": "cat-perf-8",
+        "created_at": "2025-07-19T16:16:01.470Z",
+        "updated_at": "2025-08-14T08:58:32.644Z"
+      },
+      {
+        "id": "perf-prompt-129",
+        "title": "Security Checklist #130",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 25 ---",
+        "categoryId": "cat-perf-9",
+        "created_at": "2025-07-30T23:48:34.336Z",
+        "updated_at": "2025-08-10T20:25:14.278Z"
+      },
+      {
+        "id": "perf-prompt-130",
+        "title": "Code Review Template #131",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 26 ---",
+        "categoryId": "cat-perf-0",
+        "created_at": "2025-08-03T18:51:41.325Z",
+        "updated_at": "2025-08-10T21:24:02.860Z"
+      },
+      {
+        "id": "perf-prompt-131",
+        "title": "API Endpoint Documentation #132",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 26 ---",
+        "categoryId": "cat-perf-1",
+        "created_at": "2025-08-14T17:15:33.879Z",
+        "updated_at": "2025-08-13T02:49:55.267Z"
+      },
+      {
+        "id": "perf-prompt-132",
+        "title": "Bug Report Template #133",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 26 ---",
+        "categoryId": "cat-perf-2",
+        "created_at": "2025-08-09T03:16:31.326Z",
+        "updated_at": "2025-08-15T15:10:46.746Z"
+      },
+      {
+        "id": "perf-prompt-133",
+        "title": "Database Query Optimization #134",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 26 ---",
+        "categoryId": "cat-perf-3",
+        "created_at": "2025-08-02T23:28:59.937Z",
+        "updated_at": "2025-08-13T20:00:21.681Z"
+      },
+      {
+        "id": "perf-prompt-134",
+        "title": "Security Checklist #135",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 26 ---",
+        "categoryId": "cat-perf-4",
+        "created_at": "2025-07-20T10:00:30.099Z",
+        "updated_at": "2025-08-10T22:08:25.138Z"
+      },
+      {
+        "id": "perf-prompt-135",
+        "title": "Code Review Template #136",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 27 ---",
+        "categoryId": "cat-perf-5",
+        "created_at": "2025-07-30T06:42:32.132Z",
+        "updated_at": "2025-08-14T08:47:45.460Z"
+      },
+      {
+        "id": "perf-prompt-136",
+        "title": "API Endpoint Documentation #137",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 27 ---",
+        "categoryId": "cat-perf-6",
+        "created_at": "2025-07-28T06:42:34.538Z",
+        "updated_at": "2025-08-14T12:05:14.693Z"
+      },
+      {
+        "id": "perf-prompt-137",
+        "title": "Bug Report Template #138",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 27 ---",
+        "categoryId": "cat-perf-7",
+        "created_at": "2025-08-04T02:00:56.392Z",
+        "updated_at": "2025-08-12T04:41:51.846Z"
+      },
+      {
+        "id": "perf-prompt-138",
+        "title": "Database Query Optimization #139",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 27 ---",
+        "categoryId": "cat-perf-8",
+        "created_at": "2025-08-02T01:28:44.264Z",
+        "updated_at": "2025-08-14T08:50:10.217Z"
+      },
+      {
+        "id": "perf-prompt-139",
+        "title": "Security Checklist #140",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 27 ---",
+        "categoryId": "cat-perf-9",
+        "created_at": "2025-08-12T19:12:26.513Z",
+        "updated_at": "2025-08-15T05:26:46.927Z"
+      },
+      {
+        "id": "perf-prompt-140",
+        "title": "Code Review Template #141",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 28 ---",
+        "categoryId": "cat-perf-0",
+        "created_at": "2025-07-29T13:07:08.496Z",
+        "updated_at": "2025-08-15T02:07:21.528Z"
+      },
+      {
+        "id": "perf-prompt-141",
+        "title": "API Endpoint Documentation #142",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 28 ---",
+        "categoryId": "cat-perf-1",
+        "created_at": "2025-07-27T00:35:05.087Z",
+        "updated_at": "2025-08-11T03:00:34.524Z"
+      },
+      {
+        "id": "perf-prompt-142",
+        "title": "Bug Report Template #143",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 28 ---",
+        "categoryId": "cat-perf-2",
+        "created_at": "2025-07-21T11:17:24.597Z",
+        "updated_at": "2025-08-13T15:41:33.857Z"
+      },
+      {
+        "id": "perf-prompt-143",
+        "title": "Database Query Optimization #144",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 28 ---",
+        "categoryId": "cat-perf-3",
+        "created_at": "2025-08-03T23:46:12.481Z",
+        "updated_at": "2025-08-15T14:25:56.858Z"
+      },
+      {
+        "id": "perf-prompt-144",
+        "title": "Security Checklist #145",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 28 ---",
+        "categoryId": "cat-perf-4",
+        "created_at": "2025-07-21T12:11:01.816Z",
+        "updated_at": "2025-08-10T17:28:10.952Z"
+      },
+      {
+        "id": "perf-prompt-145",
+        "title": "Code Review Template #146",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 29 ---",
+        "categoryId": "cat-perf-5",
+        "created_at": "2025-08-01T17:57:15.915Z",
+        "updated_at": "2025-08-13T11:06:43.619Z"
+      },
+      {
+        "id": "perf-prompt-146",
+        "title": "API Endpoint Documentation #147",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 29 ---",
+        "categoryId": "cat-perf-6",
+        "created_at": "2025-08-03T03:16:13.389Z",
+        "updated_at": "2025-08-11T23:26:18.210Z"
+      },
+      {
+        "id": "perf-prompt-147",
+        "title": "Bug Report Template #148",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 29 ---",
+        "categoryId": "cat-perf-7",
+        "created_at": "2025-08-01T07:32:28.683Z",
+        "updated_at": "2025-08-13T03:21:55.271Z"
+      },
+      {
+        "id": "perf-prompt-148",
+        "title": "Database Query Optimization #149",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 29 ---",
+        "categoryId": "cat-perf-8",
+        "created_at": "2025-08-10T01:58:10.454Z",
+        "updated_at": "2025-08-13T14:33:26.441Z"
+      },
+      {
+        "id": "perf-prompt-149",
+        "title": "Security Checklist #150",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 29 ---",
+        "categoryId": "cat-perf-9",
+        "created_at": "2025-08-08T03:22:14.020Z",
+        "updated_at": "2025-08-13T17:05:24.857Z"
+      },
+      {
+        "id": "perf-prompt-150",
+        "title": "Code Review Template #151",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 30 ---",
+        "categoryId": "cat-perf-0",
+        "created_at": "2025-08-14T17:58:18.715Z",
+        "updated_at": "2025-08-16T06:52:06.645Z"
+      },
+      {
+        "id": "perf-prompt-151",
+        "title": "API Endpoint Documentation #152",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 30 ---",
+        "categoryId": "cat-perf-1",
+        "created_at": "2025-08-11T00:05:30.633Z",
+        "updated_at": "2025-08-16T19:55:35.384Z"
+      },
+      {
+        "id": "perf-prompt-152",
+        "title": "Bug Report Template #153",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 30 ---",
+        "categoryId": "cat-perf-2",
+        "created_at": "2025-07-29T05:41:40.283Z",
+        "updated_at": "2025-08-16T10:54:22.504Z"
+      },
+      {
+        "id": "perf-prompt-153",
+        "title": "Database Query Optimization #154",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 30 ---",
+        "categoryId": "cat-perf-3",
+        "created_at": "2025-07-29T02:23:54.547Z",
+        "updated_at": "2025-08-16T18:39:27.228Z"
+      },
+      {
+        "id": "perf-prompt-154",
+        "title": "Security Checklist #155",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 30 ---",
+        "categoryId": "cat-perf-4",
+        "created_at": "2025-08-06T18:22:18.016Z",
+        "updated_at": "2025-08-14T23:39:55.827Z"
+      },
+      {
+        "id": "perf-prompt-155",
+        "title": "Code Review Template #156",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 31 ---",
+        "categoryId": "cat-perf-5",
+        "created_at": "2025-08-08T18:13:11.447Z",
+        "updated_at": "2025-08-13T14:43:05.429Z"
+      },
+      {
+        "id": "perf-prompt-156",
+        "title": "API Endpoint Documentation #157",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 31 ---",
+        "categoryId": "cat-perf-6",
+        "created_at": "2025-08-05T12:49:31.217Z",
+        "updated_at": "2025-08-16T16:51:19.768Z"
+      },
+      {
+        "id": "perf-prompt-157",
+        "title": "Bug Report Template #158",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 31 ---",
+        "categoryId": "cat-perf-7",
+        "created_at": "2025-07-29T02:48:29.455Z",
+        "updated_at": "2025-08-11T17:30:55.198Z"
+      },
+      {
+        "id": "perf-prompt-158",
+        "title": "Database Query Optimization #159",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 31 ---",
+        "categoryId": "cat-perf-8",
+        "created_at": "2025-07-25T04:44:18.415Z",
+        "updated_at": "2025-08-16T23:36:33.515Z"
+      },
+      {
+        "id": "perf-prompt-159",
+        "title": "Security Checklist #160",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 31 ---",
+        "categoryId": "cat-perf-9",
+        "created_at": "2025-07-25T00:40:00.407Z",
+        "updated_at": "2025-08-14T06:01:29.462Z"
+      },
+      {
+        "id": "perf-prompt-160",
+        "title": "Code Review Template #161",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 32 ---",
+        "categoryId": "cat-perf-0",
+        "created_at": "2025-08-09T18:31:42.865Z",
+        "updated_at": "2025-08-10T14:57:01.242Z"
+      },
+      {
+        "id": "perf-prompt-161",
+        "title": "API Endpoint Documentation #162",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 32 ---",
+        "categoryId": "cat-perf-1",
+        "created_at": "2025-08-12T17:34:36.377Z",
+        "updated_at": "2025-08-13T13:18:06.619Z"
+      },
+      {
+        "id": "perf-prompt-162",
+        "title": "Bug Report Template #163",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 32 ---",
+        "categoryId": "cat-perf-2",
+        "created_at": "2025-08-09T05:13:05.599Z",
+        "updated_at": "2025-08-13T10:22:41.071Z"
+      },
+      {
+        "id": "perf-prompt-163",
+        "title": "Database Query Optimization #164",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 32 ---",
+        "categoryId": "cat-perf-3",
+        "created_at": "2025-08-09T17:33:51.830Z",
+        "updated_at": "2025-08-16T13:35:12.412Z"
+      },
+      {
+        "id": "perf-prompt-164",
+        "title": "Security Checklist #165",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 32 ---",
+        "categoryId": "cat-perf-4",
+        "created_at": "2025-07-20T20:53:58.322Z",
+        "updated_at": "2025-08-15T07:26:09.574Z"
+      },
+      {
+        "id": "perf-prompt-165",
+        "title": "Code Review Template #166",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 33 ---",
+        "categoryId": "cat-perf-5",
+        "created_at": "2025-07-25T20:36:47.918Z",
+        "updated_at": "2025-08-12T22:18:55.420Z"
+      },
+      {
+        "id": "perf-prompt-166",
+        "title": "API Endpoint Documentation #167",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 33 ---",
+        "categoryId": "cat-perf-6",
+        "created_at": "2025-08-14T15:00:30.146Z",
+        "updated_at": "2025-08-13T09:05:54.247Z"
+      },
+      {
+        "id": "perf-prompt-167",
+        "title": "Bug Report Template #168",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 33 ---",
+        "categoryId": "cat-perf-7",
+        "created_at": "2025-08-09T05:44:11.329Z",
+        "updated_at": "2025-08-15T09:25:02.219Z"
+      },
+      {
+        "id": "perf-prompt-168",
+        "title": "Database Query Optimization #169",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 33 ---",
+        "categoryId": "cat-perf-8",
+        "created_at": "2025-07-24T09:12:30.063Z",
+        "updated_at": "2025-08-13T20:49:33.927Z"
+      },
+      {
+        "id": "perf-prompt-169",
+        "title": "Security Checklist #170",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 33 ---",
+        "categoryId": "cat-perf-9",
+        "created_at": "2025-08-16T01:46:40.432Z",
+        "updated_at": "2025-08-10T19:45:14.177Z"
+      },
+      {
+        "id": "perf-prompt-170",
+        "title": "Code Review Template #171",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 34 ---",
+        "categoryId": "cat-perf-0",
+        "created_at": "2025-08-02T18:31:45.442Z",
+        "updated_at": "2025-08-14T08:50:24.805Z"
+      },
+      {
+        "id": "perf-prompt-171",
+        "title": "API Endpoint Documentation #172",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 34 ---",
+        "categoryId": "cat-perf-1",
+        "created_at": "2025-08-09T00:08:59.577Z",
+        "updated_at": "2025-08-16T03:48:51.496Z"
+      },
+      {
+        "id": "perf-prompt-172",
+        "title": "Bug Report Template #173",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 34 ---",
+        "categoryId": "cat-perf-2",
+        "created_at": "2025-08-05T13:21:34.872Z",
+        "updated_at": "2025-08-16T18:15:34.444Z"
+      },
+      {
+        "id": "perf-prompt-173",
+        "title": "Database Query Optimization #174",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 34 ---",
+        "categoryId": "cat-perf-3",
+        "created_at": "2025-08-07T05:47:22.019Z",
+        "updated_at": "2025-08-13T02:28:47.684Z"
+      },
+      {
+        "id": "perf-prompt-174",
+        "title": "Security Checklist #175",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 34 ---",
+        "categoryId": "cat-perf-4",
+        "created_at": "2025-08-03T17:29:53.419Z",
+        "updated_at": "2025-08-12T03:58:32.601Z"
+      },
+      {
+        "id": "perf-prompt-175",
+        "title": "Code Review Template #176",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 35 ---",
+        "categoryId": "cat-perf-5",
+        "created_at": "2025-08-14T07:12:19.890Z",
+        "updated_at": "2025-08-16T16:59:40.651Z"
+      },
+      {
+        "id": "perf-prompt-176",
+        "title": "API Endpoint Documentation #177",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 35 ---",
+        "categoryId": "cat-perf-6",
+        "created_at": "2025-07-24T11:13:58.850Z",
+        "updated_at": "2025-08-16T15:38:22.943Z"
+      },
+      {
+        "id": "perf-prompt-177",
+        "title": "Bug Report Template #178",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 35 ---",
+        "categoryId": "cat-perf-7",
+        "created_at": "2025-08-13T22:25:34.800Z",
+        "updated_at": "2025-08-10T15:36:03.020Z"
+      },
+      {
+        "id": "perf-prompt-178",
+        "title": "Database Query Optimization #179",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 35 ---",
+        "categoryId": "cat-perf-8",
+        "created_at": "2025-08-06T16:23:14.224Z",
+        "updated_at": "2025-08-12T17:46:03.046Z"
+      },
+      {
+        "id": "perf-prompt-179",
+        "title": "Security Checklist #180",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 35 ---",
+        "categoryId": "cat-perf-9",
+        "created_at": "2025-08-11T17:36:49.235Z",
+        "updated_at": "2025-08-12T22:55:39.967Z"
+      },
+      {
+        "id": "perf-prompt-180",
+        "title": "Code Review Template #181",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 36 ---",
+        "categoryId": "cat-perf-0",
+        "created_at": "2025-07-26T08:55:04.768Z",
+        "updated_at": "2025-08-12T23:28:07.806Z"
+      },
+      {
+        "id": "perf-prompt-181",
+        "title": "API Endpoint Documentation #182",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 36 ---",
+        "categoryId": "cat-perf-1",
+        "created_at": "2025-08-03T03:36:39.797Z",
+        "updated_at": "2025-08-12T08:36:30.116Z"
+      },
+      {
+        "id": "perf-prompt-182",
+        "title": "Bug Report Template #183",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 36 ---",
+        "categoryId": "cat-perf-2",
+        "created_at": "2025-07-18T11:40:44.728Z",
+        "updated_at": "2025-08-11T23:38:53.481Z"
+      },
+      {
+        "id": "perf-prompt-183",
+        "title": "Database Query Optimization #184",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 36 ---",
+        "categoryId": "cat-perf-3",
+        "created_at": "2025-08-04T23:24:57.115Z",
+        "updated_at": "2025-08-15T21:31:47.745Z"
+      },
+      {
+        "id": "perf-prompt-184",
+        "title": "Security Checklist #185",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 36 ---",
+        "categoryId": "cat-perf-4",
+        "created_at": "2025-08-01T18:20:16.707Z",
+        "updated_at": "2025-08-13T21:53:22.835Z"
+      },
+      {
+        "id": "perf-prompt-185",
+        "title": "Code Review Template #186",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 37 ---",
+        "categoryId": "cat-perf-5",
+        "created_at": "2025-07-24T17:13:02.463Z",
+        "updated_at": "2025-08-12T20:08:39.391Z"
+      },
+      {
+        "id": "perf-prompt-186",
+        "title": "API Endpoint Documentation #187",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 37 ---",
+        "categoryId": "cat-perf-6",
+        "created_at": "2025-07-18T15:30:18.791Z",
+        "updated_at": "2025-08-13T19:43:24.087Z"
+      },
+      {
+        "id": "perf-prompt-187",
+        "title": "Bug Report Template #188",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 37 ---",
+        "categoryId": "cat-perf-7",
+        "created_at": "2025-08-15T05:25:33.626Z",
+        "updated_at": "2025-08-10T20:28:02.524Z"
+      },
+      {
+        "id": "perf-prompt-188",
+        "title": "Database Query Optimization #189",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 37 ---",
+        "categoryId": "cat-perf-8",
+        "created_at": "2025-07-20T04:31:31.484Z",
+        "updated_at": "2025-08-16T04:22:30.146Z"
+      },
+      {
+        "id": "perf-prompt-189",
+        "title": "Security Checklist #190",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 37 ---",
+        "categoryId": "cat-perf-9",
+        "created_at": "2025-07-26T06:29:33.564Z",
+        "updated_at": "2025-08-13T14:37:02.739Z"
+      },
+      {
+        "id": "perf-prompt-190",
+        "title": "Code Review Template #191",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 38 ---",
+        "categoryId": "cat-perf-0",
+        "created_at": "2025-08-03T22:23:21.997Z",
+        "updated_at": "2025-08-16T10:15:19.377Z"
+      },
+      {
+        "id": "perf-prompt-191",
+        "title": "API Endpoint Documentation #192",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 38 ---",
+        "categoryId": "cat-perf-1",
+        "created_at": "2025-07-24T22:23:52.081Z",
+        "updated_at": "2025-08-15T18:27:23.674Z"
+      },
+      {
+        "id": "perf-prompt-192",
+        "title": "Bug Report Template #193",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 38 ---",
+        "categoryId": "cat-perf-2",
+        "created_at": "2025-08-06T16:29:42.647Z",
+        "updated_at": "2025-08-10T19:34:05.346Z"
+      },
+      {
+        "id": "perf-prompt-193",
+        "title": "Database Query Optimization #194",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 38 ---",
+        "categoryId": "cat-perf-3",
+        "created_at": "2025-08-13T12:40:41.587Z",
+        "updated_at": "2025-08-17T08:04:07.921Z"
+      },
+      {
+        "id": "perf-prompt-194",
+        "title": "Security Checklist #195",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 38 ---",
+        "categoryId": "cat-perf-4",
+        "created_at": "2025-08-04T02:49:54.097Z",
+        "updated_at": "2025-08-15T14:39:24.315Z"
+      },
+      {
+        "id": "perf-prompt-195",
+        "title": "Code Review Template #196",
+        "body": "Please review this code for:\n\n1. **Functionality**: Does it work as expected?\n2. **Performance**: Are there any bottlenecks?\n3. **Security**: Are there vulnerabilities?\n4. **Maintainability**: Is the code easy to understand and modify?\n\nSpecific areas to focus on:\n- Error handling\n- Edge cases\n- Best practices\n- Code organization\n\n--- Generated variant 39 ---",
+        "categoryId": "cat-perf-5",
+        "created_at": "2025-07-27T10:19:47.955Z",
+        "updated_at": "2025-08-11T11:08:43.429Z"
+      },
+      {
+        "id": "perf-prompt-196",
+        "title": "API Endpoint Documentation #197",
+        "body": "# API Endpoint\n\n## Description\n[Brief description]\n\n## Parameters\n- `param1` (type): Description\n- `param2` (type): Description\n\n## Response\n```json\n{\n  \"status\": \"success\",\n  \"data\": {}\n}\n```\n\n## Error Codes\n- 400: Bad Request\n- 404: Not Found\n- 500: Internal Server Error\n\n--- Generated variant 39 ---",
+        "categoryId": "cat-perf-6",
+        "created_at": "2025-08-09T16:11:37.376Z",
+        "updated_at": "2025-08-12T01:14:42.861Z"
+      },
+      {
+        "id": "perf-prompt-197",
+        "title": "Bug Report Template #198",
+        "body": "## Bug Description\n[Clear description of the issue]\n\n## Steps to Reproduce\n1. Step one\n2. Step two\n3. Step three\n\n## Expected Behavior\n[What should happen]\n\n## Actual Behavior\n[What actually happens]\n\n## Environment\n- OS: \n- Browser/Version: \n- Application Version: \n\n## Additional Notes\n[Any other relevant information]\n\n--- Generated variant 39 ---",
+        "categoryId": "cat-perf-7",
+        "created_at": "2025-07-19T04:04:20.897Z",
+        "updated_at": "2025-08-13T18:04:47.680Z"
+      },
+      {
+        "id": "perf-prompt-198",
+        "title": "Database Query Optimization #199",
+        "body": "Query optimization checklist:\n\n1. **Indexes**: Are appropriate indexes in place?\n2. **Query Structure**: Can the query be simplified?\n3. **Joins**: Are joins efficient?\n4. **Where Clauses**: Are filters applied early?\n5. **Subqueries**: Can they be replaced with joins?\n6. **Data Types**: Are column types optimal?\n7. **Execution Plan**: What does EXPLAIN show?\n\n```sql\n-- Original query\nSELECT * FROM table WHERE condition;\n\n-- Optimized query\nSELECT specific_columns FROM table \nWHERE indexed_column = value;\n```\n\n--- Generated variant 39 ---",
+        "categoryId": "cat-perf-8",
+        "created_at": "2025-07-22T00:02:52.662Z",
+        "updated_at": "2025-08-16T15:27:31.201Z"
+      },
+      {
+        "id": "perf-prompt-199",
+        "title": "Security Checklist #200",
+        "body": "## Security Review Checklist\n\n### Input Validation\n- [ ] SQL injection prevention\n- [ ] XSS protection\n- [ ] Command injection prevention\n- [ ] Path traversal protection\n\n### Authentication & Authorization\n- [ ] Strong password requirements\n- [ ] Session management\n- [ ] JWT token validation\n- [ ] Role-based access control\n\n### Data Protection\n- [ ] Encryption at rest\n- [ ] Encryption in transit\n- [ ] PII handling\n- [ ] Secure key management\n\n### Infrastructure\n- [ ] HTTPS everywhere\n- [ ] Security headers\n- [ ] CORS configuration\n- [ ] Rate limiting\n\n--- Generated variant 39 ---",
+        "categoryId": "cat-perf-9",
+        "created_at": "2025-08-12T12:58:24.832Z",
+        "updated_at": "2025-08-15T02:16:32.669Z"
+      }
+    ]
+  }
+}

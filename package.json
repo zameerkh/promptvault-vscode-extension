@@ -50,6 +50,11 @@
         "command": "promptVault.refresh",
         "title": "Refresh",
         "icon": "$(refresh)"
+      },
+      {
+        "command": "promptVault.import",
+        "title": "Import Prompts",
+        "icon": "$(cloud-download)"
       }
     ],
     "viewsContainers": {
@@ -86,6 +91,10 @@
         },
         {
           "command": "promptVault.insert",
+          "when": "true"
+        },
+        {
+          "command": "promptVault.import",
           "when": "true"
         },
         {

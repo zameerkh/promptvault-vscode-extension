@@ -22,8 +22,14 @@ export interface PromptWithCategory extends Prompt {
 }
 
 interface DatabaseData {
+    version?: string;
     prompts: Prompt[];
     categories: Category[];
+    metadata?: {
+        created: string;
+        lastUpdated: string;
+        extensionVersion?: string;
+    };
 }
 
 export class PromptDB {
@@ -49,16 +55,60 @@ export class PromptDB {
         try {
             if (fs.existsSync(this.dbPath)) {
                 const fileContent = fs.readFileSync(this.dbPath, 'utf8');
-                this.data = JSON.parse(fileContent);
+                const loadedData = JSON.parse(fileContent);
+                
+                // Handle version migration
+                this.data = this.migrateDatabase(loadedData);
             } else {
-                this.data = { prompts: [], categories: [] };
+                this.data = this.createNewDatabase();
                 this.saveDatabase();
             }
         } catch (error) {
             console.error('Failed to load database, creating new one:', error);
-            this.data = { prompts: [], categories: [] };
+            this.data = this.createNewDatabase();
             this.saveDatabase();
         }
+    }
+
+    private createNewDatabase(): DatabaseData {
+        return {
+            version: '1.0',
+            prompts: [],
+            categories: [],
+            metadata: {
+                created: new Date().toISOString(),
+                lastUpdated: new Date().toISOString(),
+                extensionVersion: '1.0.7' // Current extension version
+            }
+        };
+    }
+
+    private migrateDatabase(loadedData: any): DatabaseData {
+        // Handle legacy databases without version
+        if (!loadedData.version) {
+            console.log('Migrating legacy database to version 1.0');
+            return {
+                version: '1.0',
+                prompts: loadedData.prompts || [],
+                categories: loadedData.categories || [],
+                metadata: {
+                    created: new Date().toISOString(),
+                    lastUpdated: new Date().toISOString(),
+                    extensionVersion: '1.0.7' // Current extension version
+                }
+            };
+        }
+
+        // Handle future version migrations here
+        // if (loadedData.version === '1.0' && currentVersion === '1.1') { ... }
+
+        // Update metadata
+        if (loadedData.metadata) {
+            loadedData.metadata.lastUpdated = new Date().toISOString();
+            loadedData.metadata.extensionVersion = '1.0.7'; // Current extension version
+        }
+
+        return loadedData;
     }
 
     private saveDatabase(): void {
@@ -255,5 +305,182 @@ export class PromptDB {
             promptCount: this.data.prompts.length,
             categoryCount: this.data.categories.length
         };
+    }
+
+    // Export functionality
+    public exportToJson(): string {
+        return JSON.stringify({
+            version: '1.0',
+            exportedAt: new Date().toISOString(),
+            data: {
+                categories: this.data.categories,
+                prompts: this.data.prompts
+            }
+        }, null, 2);
+    }
+
+    public exportToCsv(): string {
+        const headers = ['ID', 'Title', 'Body', 'Category', 'Created At', 'Updated At'];
+        const rows = [headers.join(',')];
+        
+        this.data.prompts.forEach(prompt => {
+            const category = this.data.categories.find(c => c.id === prompt.categoryId)?.name || 'Unknown';
+            const row = [
+                this.escapeCsv(prompt.id),
+                this.escapeCsv(prompt.title),
+                this.escapeCsv(prompt.body),
+                this.escapeCsv(category),
+                this.escapeCsv(prompt.created_at),
+                this.escapeCsv(prompt.updated_at)
+            ];
+            rows.push(row.join(','));
+        });
+        
+        return rows.join('\n');
+    }
+
+    public exportCategory(categoryId: string): { success: boolean; data?: string; error?: string } {
+        const category = this.data.categories.find(c => c.id === categoryId);
+        if (!category) {
+            return { success: false, error: 'Category not found' };
+        }
+
+        const categoryPrompts = this.data.prompts.filter(p => p.categoryId === categoryId);
+        
+        const exportData = {
+            version: '1.0',
+            exportedAt: new Date().toISOString(),
+            data: {
+                categories: [category],
+                prompts: categoryPrompts
+            }
+        };
+
+        return { success: true, data: JSON.stringify(exportData, null, 2) };
+    }
+
+    // Import functionality
+    public importFromJson(jsonData: string): { 
+        success: boolean; 
+        imported?: { categories: number; prompts: number }; 
+        conflicts?: Array<{ type: 'category' | 'prompt'; name: string; action: string }>; 
+        error?: string 
+    } {
+        try {
+            const importData = JSON.parse(jsonData);
+            
+            if (!importData.data || !importData.data.categories || !importData.data.prompts) {
+                return { success: false, error: 'Invalid import format' };
+            }
+
+            const { categories, prompts } = importData.data;
+            const conflicts: Array<{ type: 'category' | 'prompt'; name: string; action: string }> = [];
+            let importedCategories = 0;
+            let importedPrompts = 0;
+
+            // Import categories first
+            for (const category of categories) {
+                const existing = this.data.categories.find(c => c.name === category.name);
+                if (existing) {
+                    conflicts.push({ type: 'category', name: category.name, action: 'skipped - already exists' });
+                } else {
+                    const newCategory: Category = {
+                        id: uuidv4(),
+                        name: category.name
+                    };
+                    this.data.categories.push(newCategory);
+                    importedCategories++;
+                }
+            }
+
+            // Create category name to ID mapping for prompts
+            const categoryMap = new Map<string, string>();
+            for (const category of categories) {
+                const existing = this.data.categories.find(c => c.name === category.name);
+                if (existing) {
+                    categoryMap.set(category.id, existing.id);
+                }
+            }
+
+            // Import prompts
+            for (const prompt of prompts) {
+                const existing = this.data.prompts.find(p => p.title === prompt.title);
+                if (existing) {
+                    conflicts.push({ type: 'prompt', name: prompt.title, action: 'skipped - already exists' });
+                } else {
+                    const newCategoryId = categoryMap.get(prompt.categoryId) || this.data.categories[0]?.id;
+                    if (newCategoryId) {
+                        const newPrompt: Prompt = {
+                            id: uuidv4(),
+                            title: prompt.title,
+                            body: prompt.body,
+                            categoryId: newCategoryId,
+                            created_at: new Date().toISOString(),
+                            updated_at: new Date().toISOString()
+                        };
+                        this.data.prompts.push(newPrompt);
+                        importedPrompts++;
+                    }
+                }
+            }
+
+            this.saveDatabase();
+
+            return {
+                success: true,
+                imported: { categories: importedCategories, prompts: importedPrompts },
+                conflicts: conflicts.length > 0 ? conflicts : undefined
+            };
+
+        } catch (error) {
+            return { success: false, error: `Import failed: ${error instanceof Error ? error.message : 'Unknown error'}` };
+        }
+    }
+
+    public bulkDeletePrompts(promptIds: string[]): { success: boolean; deleted: number; error?: string } {
+        try {
+            const initialCount = this.data.prompts.length;
+            this.data.prompts = this.data.prompts.filter(p => !promptIds.includes(p.id));
+            const deletedCount = initialCount - this.data.prompts.length;
+            
+            this.saveDatabase();
+            
+            return { success: true, deleted: deletedCount };
+        } catch (error) {
+            return { success: false, deleted: 0, error: `Bulk delete failed: ${error instanceof Error ? error.message : 'Unknown error'}` };
+        }
+    }
+
+    public bulkUpdateCategory(promptIds: string[], newCategoryId: string): { success: boolean; updated: number; error?: string } {
+        try {
+            const category = this.data.categories.find(c => c.id === newCategoryId);
+            if (!category) {
+                return { success: false, updated: 0, error: 'Target category not found' };
+            }
+
+            let updatedCount = 0;
+            for (const prompt of this.data.prompts) {
+                if (promptIds.includes(prompt.id)) {
+                    prompt.categoryId = newCategoryId;
+                    prompt.updated_at = new Date().toISOString();
+                    updatedCount++;
+                }
+            }
+            
+            this.saveDatabase();
+            
+            return { success: true, updated: updatedCount };
+        } catch (error) {
+            return { success: false, updated: 0, error: `Bulk update failed: ${error instanceof Error ? error.message : 'Unknown error'}` };
+        }
+    }
+
+    private escapeCsv(value: string): string {
+        // Replace newlines with spaces for CSV
+        const cleanValue = value.replace(/\r?\n/g, ' ').replace(/\s+/g, ' ').trim();
+        if (cleanValue.includes(',') || cleanValue.includes('"') || value.includes('\n')) {
+            return `"${cleanValue.replace(/"/g, '""')}"`;
+        }
+        return cleanValue;
     }
 }
