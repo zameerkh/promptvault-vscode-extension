@@ -6,6 +6,7 @@ A powerful VS Code extension for managing and organizing your code prompts, snip
 
 ## 🚀 Features
 
+- **🤖 Automated CI/CD**: Automatic building and publishing via GitHub Actions
 - **📁 Category Organization**: Organize prompts into categories for easy management
 - **🔍 Powerful Search**: Full-text search across all prompts and categories
 - **⚡ Quick Access**: Access prompts via command palette and sidebar
@@ -24,7 +25,7 @@ A powerful VS Code extension for managing and organizing your code prompts, snip
 5. **Or install directly**: `code --install-extension zameerkh0696.promptvault-dev-toolkit`
 
 ### Manual Installation (Current Version)
-1. Download the latest `.vsix` file from the [releases page](https://github.com/zameerkh0696/promptvault-vscode-extension/releases)
+1. Download the latest `.vsix` file from the [releases page](https://github.com/zameerkh/promptvault-vscode-extension/releases)
 2. Open Visual Studio Code
 3. Press `Ctrl+Shift+P` to open Command Palette
 4. Type "Extensions: Install from VSIX"
@@ -78,17 +79,17 @@ Press `Ctrl+Shift+P` and search for:
 - `PromptVault: Show Quick Pick` - Browse and insert prompts quickly
 - `PromptVault: Focus` - Open the PromptVault sidebar
 
-## 🔧 Development
+## 🔧 Development & Publishing
 
 ### Prerequisites
-- Node.js (v16 or higher)
+- Node.js (v20 or higher)
 - VS Code
 - TypeScript
 
 ### Setup
 ```bash
 # Clone the repository
-git clone https://github.com/zameerkh0696/promptvault-vscode-extension.git
+git clone https://github.com/zameerkh/promptvault-vscode-extension.git
 cd promptvault-vscode-extension
 
 # Install dependencies
@@ -110,14 +111,42 @@ npm run watch
 # Press F5 in VS Code with the project open
 ```
 
-### Publishing
-```powershell
-# Package only
-.\publish.ps1 -PackageOnly
+### 🚀 Automated Publishing (CI/CD)
 
-# Package and publish to marketplace
+This extension uses **GitHub Actions** for automated building and publishing:
+
+#### Automatic Publishing
+- **Push to `main`** → Automatically builds and publishes to VS Code Marketplace
+- **Version changes** → Automatically creates GitHub releases
+- **Pull requests** → Validates build without publishing
+
+#### Publishing New Version
+```bash
+# 1. Update version and push
+npm version patch  # or minor/major
+git push origin main --follow-tags
+
+# 2. GitHub Actions will automatically:
+# ✅ Build the extension
+# ✅ Run TypeScript compilation
+# ✅ Create production bundle
+# ✅ Publish to VS Code Marketplace
+# ✅ Create GitHub release with VSIX
+```
+
+#### Manual Publishing (Legacy)
+```powershell
+# For manual publishing (if needed)
+npx @vscode/vsce publish --pat "your-personal-access-token"
+
+# Or using the legacy script
 .\publish.ps1 -PAT "your-personal-access-token"
 ```
+
+#### CI/CD Status
+- **Build Status**: ![Build and Publish](https://github.com/zameerkh/promptvault-vscode-extension/actions/workflows/build-and-publish.yml/badge.svg)
+- **Latest Release**: [GitHub Releases](https://github.com/zameerkh/promptvault-vscode-extension/releases)
+- **Marketplace**: [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=zameerkh0696.promptvault-dev-toolkit)
 
 ## 📁 Project Structure
 
@@ -163,7 +192,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you encounter any issues or have suggestions:
 
-1. Check the [Issues page](https://github.com/zameerkh0696/promptvault-vscode-extension/issues)
+1. Check the [Issues page](https://github.com/zameerkh/promptvault-vscode-extension/issues)
 2. Create a new issue with:
    - Clear description of the problem
    - Steps to reproduce
